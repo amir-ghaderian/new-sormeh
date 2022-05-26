@@ -1,0 +1,11 @@
+nav{
+    background: 
+    linear-gradient(#1876d1,#1876d1)
+    no-repeat right;
+    background-size: 0 100%;
+    transition: background-size 500ms;
+}
+nav:hover{
+    background-size: 100% 100%;
+    background-position: left;
+}
