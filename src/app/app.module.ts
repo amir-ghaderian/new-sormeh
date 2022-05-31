@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SliderComponent } from './slider/slider.component';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 @NgModule({
   declarations: [
@@ -15,10 +16,12 @@ import { SliderComponent } from './slider/slider.component';
     LoginComponent,
     SignupComponent,
     SliderComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgImageSliderModule 
   ],
   providers: [],
   bootstrap: [AppComponent] 
