@@ -1,0 +1,15 @@
+<div class="bg-cover w-full bg-center mt-8 h-72 "
+    style="background-image: url(assets/pic/photo-1578932750294-f5075e85f44a.jpeg);"></div>
+<div class="w-full flex justify-center mt-4">
+    <div class="  flex flex-wrap max-w-screen-xl justify-center">
+        <div  *ngFor="let pic of clothes let i=index" >
+            <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});">
+                {{pic.title}}
+            </div>
+            <div *ngFor="let dot of pic.images let l=index"class="inline-flex ">
+                <span class="text-gray-600  text-2xl  ">.</span>
+            
+        </div>
+        </div>
+    </div>
+</div>

@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SliderComponent } from './slider/slider.component';
 import { NgImageSliderModule } from 'ng-image-slider';
+import { MainlistComponent } from './mainlist/mainlist.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NgImageSliderModule } from 'ng-image-slider';
     HeaderComponent,
     LoginComponent,
     SignupComponent,
-    SliderComponent
+    SliderComponent,
+    MainlistComponent
     
   ],
   imports: [

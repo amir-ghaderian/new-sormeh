@@ -5,12 +5,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SliderComponent } from './slider/slider.component';
+import { MainlistComponent } from './mainlist/mainlist.component';
 
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
-  {path:'slider',component:SliderComponent}
+  {path:'slider',component:SliderComponent},
+  {path:'mainlist',component:MainlistComponent}
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
@@ -19,4 +22,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingComponents=[LoginComponent,SignupComponent,SliderComponent]
+export const routingComponents=[LoginComponent,SignupComponent,SliderComponent,MainlistComponent]
