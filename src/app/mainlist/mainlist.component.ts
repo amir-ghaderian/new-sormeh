@@ -21,14 +21,20 @@ export class MainlistComponent implements OnInit {
     { title: 1122, images: ["assets/pic/11.jpg", "assets/pic/1.jpg"] }
   ]
   currentImge: string[] = [];
+  currentIndex: number[] = [];
   constructor() {
     for (var i = 0; i < this.clothes.length; i++) {
       this.currentImge.push(this.clothes[i].images[0])
+      this.currentIndex.push(0)
     }
 
 
   }
   ngOnInit(): void {
+  }
+  showingImg(id:number,clothesNum:number){
+    this.currentImge[clothesNum] = this.clothes[clothesNum].images[id];
+    this.currentIndex[clothesNum] = id;
   }
 
 }
