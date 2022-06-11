@@ -3,7 +3,7 @@
 <div class="w-full flex justify-center mt-4">
     <div class="  flex flex-wrap max-w-screen-xl justify-center">
         <div *ngFor="let pic of clothes let i=index">
-            <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});">
+            <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});" (click)="showDetail(currentImge[i])">
                 {{pic.title}}
             </div>
             <div class="flex justify-center">

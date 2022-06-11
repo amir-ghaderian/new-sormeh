@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainlistComponent implements OnInit {
   clothes = [
-    { title: 1112, images: ["assets/pic/1.jpg", "assets/pic/11.jpg","assets/pic/1.jpg"] },
+    { title: 1112, images: ["assets/pic/1.jpg", "assets/pic/11.jpg", "assets/pic/1.jpg"] },
     { title: 1113, images: ["assets/pic/13.jpg", "assets/pic/10.jpg"] },
     { title: 1114, images: ["assets/pic/12.jpg", "assets/pic/9.jpg"] },
     { title: 1115, images: ["assets/pic/2.jpg", "assets/pic/8.jpg"] },
@@ -32,9 +32,12 @@ export class MainlistComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-  showingImg(id:number,clothesNum:number){
+  showingImg(id: number, clothesNum: number) {
     this.currentImge[clothesNum] = this.clothes[clothesNum].images[id];
     this.currentIndex[clothesNum] = id;
+  }
+  showDetail(id: any) {
+    console.log(id)
   }
 
 }
