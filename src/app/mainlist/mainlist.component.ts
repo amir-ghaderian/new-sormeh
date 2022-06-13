@@ -24,9 +24,10 @@ export class MainlistComponent implements OnInit {
     { title: 1120, images: ["assets/pic/7.jpg", "assets/pic/3.jpg"] },
     { title: 1121, images: ["assets/pic/8.jpg", "assets/pic/2.jpg"] },
     { title: 1122, images: ["assets/pic/9.jpg", "assets/pic/1.jpg"] },
-    { title: 1122, images: ["assets/pic/11.jpg", "assets/pic/1.jpg"] }
+    { title: 1123, images: ["assets/pic/11.jpg", "assets/pic/1.jpg"] }
   ]
   detailPic:any="";
+  detailTitle:any="";
   currentImge: string[] = [];
   currentIndex: number[] = [];
   constructor(private modalService: ModalService) {
@@ -45,8 +46,9 @@ export class MainlistComponent implements OnInit {
     this.currentImge[clothesNum] = this.clothes[clothesNum].images[id];
     this.currentIndex[clothesNum] = id;
   }
-  showDetail(namePic: any) {
-    this.detailPic= namePic;
+  showDetail(srcPic: any,titlePic:any) {
+    this.detailPic= srcPic;
+    this.detailTitle=titlePic;
   }
   openModal(id: string) {
     
