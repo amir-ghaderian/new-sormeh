@@ -3,9 +3,14 @@
 <div class="w-full flex justify-center mt-4">
     <div class="  flex flex-wrap max-w-screen-xl justify-center">
         <div *ngFor="let pic of clothes let i=index">
-            <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});" (click)="showDetail(currentImge[i])">
+            
+            <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});" (click)="showDetail(currentImge[i])" (click)="openModal('custom-modal-1')" >
                 {{pic.title}}
+            
             </div>
+            <jw-modal id="custom-modal-1">
+               <div class="w-1/2 h-auto"><img src="{{detailPic}}" alt=""></div> 
+        </jw-modal>
             <div class="flex justify-center">
                 <div *ngFor="let dot of pic.images let l=index"> <span (click)="showingImg(l,i)"
                         class="text-gray-400 mx-3 font-bold cursor-pointer"

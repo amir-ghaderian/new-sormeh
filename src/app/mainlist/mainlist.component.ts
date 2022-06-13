@@ -1,10 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
+import { ModalService } from '../_modal';
 
 @Component({
   selector: 'app-mainlist',
   templateUrl: './mainlist.component.html',
   styleUrls: ['./mainlist.component.css']
 })
+
+
+
+
 export class MainlistComponent implements OnInit {
   clothes = [
     { title: 1112, images: ["assets/pic/1.jpg", "assets/pic/11.jpg", "assets/pic/1.jpg"] },
@@ -20,24 +26,36 @@ export class MainlistComponent implements OnInit {
     { title: 1122, images: ["assets/pic/9.jpg", "assets/pic/1.jpg"] },
     { title: 1122, images: ["assets/pic/11.jpg", "assets/pic/1.jpg"] }
   ]
+  detailPic:any="";
   currentImge: string[] = [];
   currentIndex: number[] = [];
-  constructor() {
+  constructor(private modalService: ModalService) {
     for (var i = 0; i < this.clothes.length; i++) {
       this.currentImge.push(this.clothes[i].images[0])
       this.currentIndex.push(0)
     }
 
 
+
   }
+
   ngOnInit(): void {
   }
   showingImg(id: number, clothesNum: number) {
     this.currentImge[clothesNum] = this.clothes[clothesNum].images[id];
     this.currentIndex[clothesNum] = id;
   }
-  showDetail(id: any) {
-    console.log(id)
+  showDetail(namePic: any) {
+    this.detailPic= namePic;
+  }
+  openModal(id: string) {
+    
+    console.log(this.detailPic)
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 
 }
