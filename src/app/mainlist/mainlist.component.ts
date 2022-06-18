@@ -41,7 +41,7 @@ export class MainlistComponent implements OnInit {
   currentImge: string[] = [];
   currentIndex: number[] = [];
 
-  // targetCloth 
+  ///targetCloth
 
   constructor(private modalService: ModalService) {
     for (var i = 0; i < this.clothes.length; i++) {
@@ -65,6 +65,7 @@ export class MainlistComponent implements OnInit {
     this.detailPic = srcPic;
     this.detailTitle = titlePic;
    this.tagIdClothes=this.clothes[id].tagId
+
     // console.log(this.tagIdClothes)
     ///this.tags=this.clothes[id].tags;
   }
@@ -75,7 +76,7 @@ export class MainlistComponent implements OnInit {
 
 
     getTagTitle(id: number) {
-      return '-';
+      return this.tags[id-1].title;
     }
 
 
