@@ -35,11 +35,13 @@ export class MainlistComponent implements OnInit {
     { id: 6, title: " بدون رنگ دهی" },
     { id: 7, title: " جیبدار" },
   ];
-  tagIdClothes=""
+  tagIdClothes= []
   detailPic: any = "";
   detailTitle: any = "";
   currentImge: string[] = [];
   currentIndex: number[] = [];
+
+  // targetCloth 
 
   constructor(private modalService: ModalService) {
     for (var i = 0; i < this.clothes.length; i++) {
@@ -59,13 +61,24 @@ export class MainlistComponent implements OnInit {
     this.currentIndex[clothesNum] = id;
   }
   showDetail(srcPic: any, titlePic: any, id: number) {
-    this.tagIdClothes="";
+    
     this.detailPic = srcPic;
     this.detailTitle = titlePic;
    this.tagIdClothes=this.clothes[id].tagId
-    console.log(this.tagIdClothes)
+    // console.log(this.tagIdClothes)
     ///this.tags=this.clothes[id].tags;
   }
+
+  // showDetail( id: number) {
+    // targetCloth = this.clothes[id]
+  //}
+
+
+    getTagTitle(id: number) {
+      return '-';
+    }
+
+
   openModal(id: string) {
 
     console.log(this.detailPic)

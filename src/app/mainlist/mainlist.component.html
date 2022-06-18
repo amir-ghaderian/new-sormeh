@@ -13,12 +13,14 @@
                 <div class="w-1/2  "><img src="{{detailPic}}" class="h-96 w-4/5"></div>
                 <div class=" w-1/2 h-auto  ">
                     <h1 class="text-6xl">{{detailTitle}}</h1>
-                    <div *ngFor="let tag of tags">
-                    <ul  class="flex justify-around  w-full">
-                       <li  *ngFor="let c of tagIdClothes"><span [ngClass]="{' text-gray-400':c === tag.id }" class="text-white">{{tag.title}}</span> </li> 
-                       
-                    </ul>
-                </div>
+                   
+                    <div class="">
+                        <ul>
+                            <li *ngFor="let tag of tagIdClothes">
+                                {{getTagTitle(tag)}}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </jw-modal>
             <div class="flex justify-center">
