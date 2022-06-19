@@ -5,7 +5,7 @@
         <div *ngFor="let pic of clothes let i=index">
 
             <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});"
-                (click)="showDetail(currentImge[i],pic.title,i)" (click)="openModal('custom-modal-1')">
+                (click)="showDetail(i)" (click)="openModal('custom-modal-1')">
                 {{pic.title}}
 
             </div>
