@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ConnectorService } from './connector.service';
 
 
 @Component({
@@ -9,5 +10,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'new-sormeh';
+  constructor(svc : ConnectorService){
+    svc.printToConsole("go to in shanse")
+   
+  }
   
 }

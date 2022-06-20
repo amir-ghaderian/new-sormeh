@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { SliderComponent } from './slider/slider.component';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { MainlistComponent } from './mainlist/mainlist.component';
+import { ConnectorService } from './connector.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { MainlistComponent } from './mainlist/mainlist.component';
     ModalModule,
     NgImageSliderModule 
   ],
-  providers: [],
+  providers: [
+    ConnectorService
+  ],
   bootstrap: [AppComponent] 
 })
 export class AppModule { }
