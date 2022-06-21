@@ -2,7 +2,7 @@
     style="background-image: url(assets/pic/photo-1578932750294-f5075e85f44a.jpeg);"></div>
 <div class="w-full flex justify-center mt-4">
     <div class="  flex flex-wrap max-w-screen-xl justify-center">
-        <div *ngFor="let pic of clothes let i=index">
+        <div *ngFor="let pic of connector let i=index">
 
             <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});"
                 (click)="showDetail(i)" (click)="openModal('custom-modal-1')">

@@ -11,8 +11,7 @@ import { ConnectorService } from './connector.service';
 export class AppComponent {
   title = 'new-sormeh';
   constructor(svc : ConnectorService){
-    svc.printToConsole("go to in shanse")
-   
+   svc.clothes
   }
   
 }
