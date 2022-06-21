@@ -11,6 +11,7 @@ import { SliderComponent } from './slider/slider.component';
 import { NgImageSliderModule } from 'ng-image-slider';
 import { MainlistComponent } from './mainlist/mainlist.component';
 import { ConnectorService } from './connector.service';
+import { DetailclothComponent } from './detailcloth/detailcloth.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ConnectorService } from './connector.service';
     LoginComponent,
     SignupComponent,
     SliderComponent,
-    MainlistComponent
+    MainlistComponent,
+    DetailclothComponent
     
   ],
   imports: [

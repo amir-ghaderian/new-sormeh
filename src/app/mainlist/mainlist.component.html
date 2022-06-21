@@ -3,26 +3,13 @@
 <div class="w-full flex justify-center mt-4">
     <div class="  flex flex-wrap max-w-screen-xl justify-center">
         <div *ngFor="let pic of connector let i=index">
+            <a [routerLink]="['/detail',i]">
+                <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});"
+                    >
+                    {{pic.title}}
 
-            <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});"
-                (click)="showDetail(i)" (click)="openModal('custom-modal-1')">
-                {{pic.title}}
-
-            </div>
-            <jw-modal id="custom-modal-1" >
-                <div class="w-1/2  "><img src="{{detailPic}}" class="h-96 w-4/5"></div>
-                <div class=" w-1/2 h-auto  ">
-                    <h1 class="text-6xl">{{detailTitle}}</h1>
-                   
-                    <div class="">
-                        <ul>
-                            <li *ngFor="let tag of tagIdClothes">
-                                {{getTagTitle(tag)}}
-                            </li>
-                        </ul>
-                    </div>
                 </div>
-            </jw-modal>
+            </a>
             <div class="flex justify-center">
                 <div *ngFor="let dot of pic.images let l=index"> <span (click)="showingImg(l,i)"
                         class="text-gray-400 mx-3 font-bold cursor-pointer"

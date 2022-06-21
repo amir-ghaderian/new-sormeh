@@ -6,13 +6,15 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { SliderComponent } from './slider/slider.component';
 import { MainlistComponent } from './mainlist/mainlist.component';
+import { DetailclothComponent } from './detailcloth/detailcloth.component';
 
 
 const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'signup',component:SignupComponent},
   {path:'slider',component:SliderComponent},
-  {path:'mainlist',component:MainlistComponent}
+  {path:'mainlist',component:MainlistComponent},
+  {path:'detail/:id',component:DetailclothComponent}
 
 ];
 @NgModule({
@@ -22,4 +24,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingComponents=[LoginComponent,SignupComponent,SliderComponent,MainlistComponent]
+export const routingComponents=[LoginComponent,SignupComponent,SliderComponent,MainlistComponent,DetailclothComponent]
