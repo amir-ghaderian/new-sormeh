@@ -8,7 +8,7 @@ printToConsole(arg: string){
   console.log(arg)
 }
 
-  public clothes = [
+  public clothes:any = [
     { title: 1112, images: ["assets/pic/1.jpg", "assets/pic/11.jpg", "assets/pic/1.jpg"], tagId: [2, 4, 5] },
     { title: 1113, images: ["assets/pic/13.jpg", "assets/pic/10.jpg"], tagId: [1, 4,0] },
     { title: 1114, images: ["assets/pic/12.jpg", "assets/pic/9.jpg"], tagId: [3, 5, 1] },

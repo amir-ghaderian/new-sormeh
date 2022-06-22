@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Output, EventEmitter } from '@angular/core';
 import { ConnectorService } from '../connector.service';
 import { ModalService } from '../_modal';
 

@@ -8,10 +8,13 @@ import { ConnectorService } from '../connector.service';
 })
  
 export class DetailclothComponent implements OnInit {
-id:string | null='';
-connector:any
+id:any='';
+connector:any;
+
   constructor(private route :ActivatedRoute ,svc:ConnectorService) { 
     this.connector=svc.clothes;
+    
+    console.log(this.connector[0].title)
   } 
 
   ngOnInit(): void {
