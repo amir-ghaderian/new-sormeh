@@ -1,11 +1,13 @@
 <p>detailcloth works!</p>
 <p>cloth no:{{id}}</p>
 <div id="parentDetail">
-<div id="card" style="background-image: url({{connector[id].images[0]}});">
-   <button id="right">></button>
-   <button id="left"><</button>
+<div id="card" style="background-image: url({{selectedImg[id]}});" >
+   
 </div>
 <div id="detail">
     {{connector[id].title}}
+    <br>
+    {{selectedImg[id]}}
+    <div   ><span *ngFor="let btn of connector[id].images  let i=index" id="btn" [ngClass]="{'bgbtn':i===selectedIndex[id]}" (click)="showImg(i)">{{i}}</span></div>
 </div>
 </div>
