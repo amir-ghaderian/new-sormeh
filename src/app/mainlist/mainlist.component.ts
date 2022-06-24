@@ -13,16 +13,8 @@ import { ModalService } from '../_modal';
 
 export class MainlistComponent implements OnInit {
   
-  tags: any = [
-    { id: 0, title: "بدون چروک" },
-    { id: 1, title: "جلوبسته" },
-    { id: 2, title: "ابایی" },
-    { id: 3, title: "زیپی" },
-    { id: 4, title: "بدون دکمه" },
-    { id: 5, title: " بدون رنگ دهی" },
-    { id: 6, title: " جیبدار" },
-  ];
-  tagIdClothes = []
+ 
+  
   detailPic: any = "";
   detailTitle: any = "";
   currentImge: string[] = [];
@@ -52,16 +44,13 @@ export class MainlistComponent implements OnInit {
 
     this.detailPic = this.currentImge[id];
     this.detailTitle = this.connector[id].title;
-    this.tagIdClothes = this.connector[id].tagId;
+   /// this.tagIdClothes = this.connector[id].tagId;
     this.targetCloth = this.connector[id];
     
    
   }
 
-  getTagTitle(id: number) {
-    return this.tags[id].title;
-  }
-
+  
 
   openModal(id: string) {
     this.modalService.open(id);

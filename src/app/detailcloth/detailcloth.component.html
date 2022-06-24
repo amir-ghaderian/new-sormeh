@@ -9,5 +9,6 @@
     <br>
     {{selectedImg[id]}}
     <div   ><span *ngFor="let btn of connector[id].images  let i=index" id="btn" [ngClass]="{'bgbtn':i===selectedIndex[id]}" (click)="showImg(i)">{{i}}</span></div>
+    <div ><span id="tag" *ngFor="let tag of tagIdClothes" >{{getTagTitle(tag)}}</span></div>
 </div>
 </div>

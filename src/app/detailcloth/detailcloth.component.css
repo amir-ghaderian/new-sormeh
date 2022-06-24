@@ -17,6 +17,7 @@
     flex-direction: column;
     width: 50%;
     justify-content: space-around;
+    align-items: center;
 
 }
 #btn{
@@ -28,5 +29,11 @@
     
 }
 .bgbtn{
-    background-color: rgb(197, 136, 136);
+    background-color:rgba(197, 179, 179, 0.856);
+}
+#tag{
+    padding: 1em;
+    background-color: rgba(197, 179, 179, 0.856);
+    border-radius: 1em;
+    margin: .5em;
 }

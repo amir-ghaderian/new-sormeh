@@ -23,6 +23,7 @@ currentIndex: number[] = [];
     { title: 1122, images: ["assets/pic/9.jpg", "assets/pic/1.jpg", "assets/pic/5.jpg", "assets/pic/4.jpg"], tagId: [2, 5] },
     { title: 1123, images: ["assets/pic/11.jpg", "assets/pic/1.jpg", "assets/pic/5.jpg", "assets/pic/4.jpg"], tagId: [4, 5] }
   ]
+  
 constructor(){
   for (var i = 0; i < this.clothes.length; i++) {
     this.currentImge.push(this.clothes[i].images[0])
@@ -30,5 +31,6 @@ constructor(){
 
   }
 }
+
 
 }
