@@ -13,6 +13,10 @@ export class TagsService {
     { id: 5, title: " بدون رنگ دهی" },
     { id: 6, title: " جیبدار" },
   ];
+
+  public getTagTitle(tagId: number): string {
+    return '-';
+  }
   
  
 }
