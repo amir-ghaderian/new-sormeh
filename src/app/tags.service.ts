@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TagsService {
-  tags: any = [
+  tags: Array<Tag> = [
     { id: 0, title: "بدون چروک" },
     { id: 1, title: "جلوبسته" },
     { id: 2, title: "ابایی" },
@@ -15,8 +15,26 @@ export class TagsService {
   ];
 
   public getTagTitle(tagId: number): string {
+
+    const target = this.tags.find(t => t.id === tagId);
+
+    if(target) {
+      return target.title
+    }
     return '-';
   }
   
  
+}
+
+
+export class Tag {
+  id: number;
+  title: string;
+
+
+  constructor(_id: number, _title: string) {
+    this.id = _id;
+    this.title = _title;
+  }
 }
