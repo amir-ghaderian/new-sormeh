@@ -27,8 +27,7 @@ export class TagsService {
  
 }
 
-
-export class Tag {
+ export class Tag {
   id: number;
   title: string;
 
