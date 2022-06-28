@@ -1,3 +1,4 @@
+import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ConnectorService } from '../connector.service';
 import { Tag, TagsService } from '../tags.service';
@@ -17,10 +18,12 @@ export class MainlistComponent implements OnInit {
   currentIndex: number[] = [];
   targetCloth: any = ''
   connector: any;
-  tagsCloth: Array<Tag> 
+  tagsCloth: Array<Tag>;
+  selectedTags: Array<number> = [];
+  output: Array<number> | undefined
   constructor(private modalService: ModalService, svc: ConnectorService, svt: TagsService) {
     this.connector = svc.clothes;
-     this.tagsCloth=svt.tags;
+    this.tagsCloth = svt.tags;
 
     for (var i = 0; i < this.connector.length; i++) {
       this.currentImge.push(this.connector[i].images[0])
@@ -33,7 +36,7 @@ export class MainlistComponent implements OnInit {
   }
 
   ngOnInit(): void {
-   
+
   }
   showingImg(id: number, clothesNum: number) {
     this.currentImge[clothesNum] = this.connector[clothesNum].images[id];
@@ -42,7 +45,13 @@ export class MainlistComponent implements OnInit {
 
 
   tagClick(id: number) {
-    console.log(id);
+    this.selectedTags.push(id)
+    this.output = this.selectedTags.filter((item: any, index: any, array: string | any[]) => {
+      return array.indexOf(item) === array.lastIndexOf(item);
+    })
+    console.log(this.output);
+
+
     // write code to add clicked tags to selected tags...
     // if a selected tag get clicked, user expects to deselect the clicked tag 
   }

@@ -1,6 +1,6 @@
 <div class="bg-cover w-full bg-center mt-8 h-72 "
     style="background-image: url(assets/pic/photo-1578932750294-f5075e85f44a.jpeg);"></div>
-<div class="w-full h-8 flex justify-between"><span class="p-2 bg-gray-200 cursor-pointer rounded-xl" *ngFor="let tag of  tagsCloth" (click)="tagClick(tag.id)">{{tag.title}}</span></div>
+<div class="w-full h-8 flex justify-between"><span class="p-2 bg-gray-200 cursor-pointer rounded-xl" *ngFor="let tag of  tagsCloth" (click)="tagClick(tag.id)" >{{tag.title}}</span></div>
 <div class="w-full flex justify-center mt-4">
     <div class="  flex flex-wrap max-w-screen-xl justify-center">
         <div *ngFor="let pic of connector let i=index">
