@@ -41,7 +41,11 @@ export class MainlistComponent implements OnInit {
   }
 
 
-
+  tagClick(id: number) {
+    console.log(id);
+    // write code to add clicked tags to selected tags...
+    // if a selected tag get clicked, user expects to deselect the clicked tag 
+  }
 
 
   openModal(id: string) {
