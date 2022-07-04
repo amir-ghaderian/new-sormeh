@@ -45,13 +45,14 @@ export class MainlistComponent implements OnInit {
 
 
   tagClick(id: number) {
-    this.selectedTags.push(id)
-    this.output = this.selectedTags.filter((item: any, index: any, array: string | any[]) => {
-      return array.indexOf(item) === array.lastIndexOf(item);
-    })
-    console.log(this.output);
+    if (this.selectedTags.indexOf(id) === -1) {
+      this.selectedTags.push(id)
+    } else {
+      let location = this.selectedTags.lastIndexOf(id);
+      this.selectedTags.splice(location, 1)
+    }
 
-
+    console.log(this.selectedTags)
     // write code to add clicked tags to selected tags...
     // if a selected tag get clicked, user expects to deselect the clicked tag 
   }
