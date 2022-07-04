@@ -52,7 +52,7 @@ export class MainlistComponent implements OnInit {
       this.selectedTags.splice(location, 1)
     }
 
-    console.log(this.selectedTags)
+     return this.selectedTags
     // write code to add clicked tags to selected tags...
     // if a selected tag get clicked, user expects to deselect the clicked tag 
   }
