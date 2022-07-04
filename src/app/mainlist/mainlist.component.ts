@@ -21,6 +21,7 @@ export class MainlistComponent implements OnInit {
   tagsCloth: Array<Tag>;
   selectedTags: Array<number> = [];
   output: Array<number> | undefined
+  item: any
   constructor(private modalService: ModalService, svc: ConnectorService, svt: TagsService) {
     this.connector = svc.clothes;
     this.tagsCloth = svt.tags;
@@ -52,18 +53,20 @@ export class MainlistComponent implements OnInit {
       this.selectedTags.splice(location, 1)
     }
 
-     return this.selectedTags
-    // write code to add clicked tags to selected tags...
-    // if a selected tag get clicked, user expects to deselect the clicked tag 
+    return this.selectedTags
+
   }
 
 
-  openModal(id: string) {
-    this.modalService.open(id);
-  }
 
-  closeModal(id: string) {
-    this.modalService.close(id);
+  setFilter() {
+  
+    const model = this.connector.filter((item:any) => {
+      return item.connector.tagId === item.selectedTags;
+
+    })
+    console.log(model);
+    ////nothing
   }
 
 }
