@@ -5,7 +5,7 @@
         [ngClass]="{'bg-red-300':selectedTags.lastIndexOf(tag.id) >= 0}">{{tag.title}}</span> <button class="bg-green-300  rounded-xl" (click)="setFilter()">Apply</button></div>
 <div class="w-full flex justify-center mt-4">
     <div class="  flex flex-wrap max-w-screen-xl justify-center">
-        <div *ngFor="let pic of connector let i=index">
+        <div *ngFor="let pic of product let i=index">
             <a [routerLink]="['/detail',i]">
                 <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});">
                     {{pic.title}}

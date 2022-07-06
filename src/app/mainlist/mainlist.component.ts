@@ -17,17 +17,18 @@ export class MainlistComponent implements OnInit {
   currentImge: string[] = [];
   currentIndex: number[] = [];
   targetCloth: any = ''
-  connector: any;
+  product: any
   tagsCloth: Array<Tag>;
   selectedTags: Array<number> = [];
   output: Array<number> | undefined
   item: any
+  filtered: number[] = []
   constructor(private modalService: ModalService, svc: ConnectorService, svt: TagsService) {
-    this.connector = svc.clothes;
+    this.product = svc.clothes;
     this.tagsCloth = svt.tags;
 
-    for (var i = 0; i < this.connector.length; i++) {
-      this.currentImge.push(this.connector[i].images[0])
+    for (var i = 0; i < this.product.length; i++) {
+      this.currentImge.push(this.product[i].images[0])
       this.currentIndex.push(0)
 
     }
@@ -40,7 +41,7 @@ export class MainlistComponent implements OnInit {
 
   }
   showingImg(id: number, clothesNum: number) {
-    this.currentImge[clothesNum] = this.connector[clothesNum].images[id];
+    this.currentImge[clothesNum] = this.product[clothesNum].images[id];
     this.currentIndex[clothesNum] = id;
   }
 
@@ -60,13 +61,24 @@ export class MainlistComponent implements OnInit {
 
 
   setFilter() {
-  
-    const model = this.connector.filter((item:any) => {
-      return item.connector.tagId === item.selectedTags;
 
-    })
-    console.log(model);
-    ////nothing
+
+    // const product = this.product.filter((c: any) => {
+    //   return c.tagId.indexOf(this.selectedTags) !== -1
+    // })
+    // console.log(product)
+
+
+    for (var i = 0; i < this.selectedTags.length; i++) {
+      for (var j = 0; j < this.product.length; j++) {
+        for (var c = 0; c < this.product[j].tagId.length; c++) {
+          if (this.selectedTags[i] === this.product[j].tagId[c]) {
+            this.filtered.push(this.product[j])
+          }
+        }
+      }
+    }
+    console.log(this.filtered)
   }
 
 }
