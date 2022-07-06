@@ -68,17 +68,21 @@ export class MainlistComponent implements OnInit {
     // })
     // console.log(product)
 
-
+    this.filtered = []
     for (var i = 0; i < this.selectedTags.length; i++) {
       for (var j = 0; j < this.product.length; j++) {
         for (var c = 0; c < this.product[j].tagId.length; c++) {
           if (this.selectedTags[i] === this.product[j].tagId[c]) {
-            this.filtered.push(this.product[j])
+            if(this.filtered.indexOf(this.product[j]) === -1){
+              this.filtered.push(this.product[j])
+            }
+           
+          
           }
         }
       }
     }
-    console.log(this.filtered)
+     console.log(this.filtered)
   }
 
 }
