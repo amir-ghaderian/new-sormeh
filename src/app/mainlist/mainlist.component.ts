@@ -23,6 +23,7 @@ export class MainlistComponent implements OnInit {
   output: Array<number> | undefined
   item: any
   filtered: number[] = []
+  show = false;
   constructor(private modalService: ModalService, svc: ConnectorService, svt: TagsService) {
     this.product = svc.clothes;
     this.tagsCloth = svt.tags;
