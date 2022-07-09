@@ -7,7 +7,7 @@
         *ngFor="let tag of  tagsCloth let i=index" (click)="tagClick(tag.id)"
 [ngClass]="{'bg-red-300':selectedTags.lastIndexOf(tag.id) >= 0}">{{tag.title}}</span> <button class="bg-green-300  rounded-xl" (click)="setFilter()" >Apply</button></div>
     <div class="  flex flex-wrap max-w-screen-xl justify-center">
-        <div *ngFor="let pic of product let i=index">
+        <div *ngFor="let pic of mainList let i=index">
             <a [routerLink]="['/detail',i]">
                 <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});">
                     {{pic.title}}

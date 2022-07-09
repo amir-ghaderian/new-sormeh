@@ -24,6 +24,7 @@ export class MainlistComponent implements OnInit {
   item: any
   filtered: number[] = []
   show = false;
+  mainList: any
   constructor(private modalService: ModalService, svc: ConnectorService, svt: TagsService) {
     this.product = svc.clothes;
     this.tagsCloth = svt.tags;
@@ -39,7 +40,7 @@ export class MainlistComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.mainList = this.product
   }
   showingImg(id: number, clothesNum: number) {
     this.currentImge[clothesNum] = this.product[clothesNum].images[id];
@@ -71,12 +72,12 @@ export class MainlistComponent implements OnInit {
 
     this.filtered = []
     for (var i = 0; i < this.selectedTags.length; i++) {
-      for (var j = 0; j < this.product.length; j++) {
-        for (var c = 0; c < this.product[j].tagId.length; c++) {
-          if (this.selectedTags[i] === this.product[j].tagId[c]) {
-            if (this.filtered.indexOf(this.product[j]) === -1) {
-              this.filtered.push(this.product[j])
-              
+      for (var j = 0; j < this.mainList.length; j++) {
+        for (var c = 0; c < this.mainList[j].tagId.length; c++) {
+          if (this.selectedTags[i] === this.mainList[j].tagId[c]) {
+            if (this.filtered.indexOf(this.mainList[j]) === -1) {
+              this.filtered.push(this.mainList[j])
+
             }
 
 
@@ -84,8 +85,8 @@ export class MainlistComponent implements OnInit {
         }
       }
     }
-    this.product = this.filtered
-    console.log(this.filtered)
+    this.mainList = this.filtered
+    console.log(this.mainList)
 
   }
 
