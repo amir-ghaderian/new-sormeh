@@ -22,7 +22,7 @@ export class MainlistComponent implements OnInit {
   selectedTags: Array<number> = [];
   filtered: number[] = []
   show = false;
-  mainList: any
+  filterList: any
   constructor(private modalService: ModalService, svc: ConnectorService, svt: TagsService) {
     this.product = svc.clothes;
     this.tagsCloth = svt.tags;
@@ -30,10 +30,11 @@ export class MainlistComponent implements OnInit {
       this.currentImge.push(this.product[i].images[0])
       this.currentIndex.push(0)
     }
+    this.filterList = this.product
+
   }
 
   ngOnInit(): void {
-    this.mainList = this.product
   }
   showingImg(id: number, clothesNum: number) {
     this.currentImge[clothesNum] = this.product[clothesNum].images[id];
@@ -54,19 +55,24 @@ export class MainlistComponent implements OnInit {
 
 
   setFilter() {
-    this.mainList = this.product
+    this.filterList = this.product
     this.filtered = []
-    for (var i = 0; i <= this.selectedTags.length; i++) {
-      for (var j = 0; j < this.mainList.length; j++) {
-        for (var c = 0; c < this.mainList[j].tagId.length; c++) {
-          if (this.selectedTags[i] === this.mainList[j].tagId[c]) {
-            if (this.filtered.indexOf(this.mainList[j]) === -1) {
-              this.filtered.push(this.mainList[j])
+    for (var i = 0; i < this.selectedTags.length; i++) {
+      for (var j = 0; j < this.filterList.length; j++) {
+        for (var c = 0; c < this.filterList[j].tagId.length; c++) {
+          if (this.selectedTags[i] === this.filterList[j].tagId[c]) {
+            if (this.filtered.indexOf(this.filterList[j]) === -1) {
+              this.filtered.push(this.filterList[j])
             }
           }
         }
       }
+      if (this.selectedTags.length === 0) {
+        this.filterList = this.product
+      }
+      this.filterList = this.filtered
     }
-    this.mainList = this.filtered
+
   }
+
 }
