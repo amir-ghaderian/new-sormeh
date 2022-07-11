@@ -63,6 +63,8 @@ export class MainlistComponent implements OnInit {
           if (this.selectedTags[i] === this.filterList[j].tagId[c]) {
             if (this.filtered.indexOf(this.filterList[j]) === -1) {
               this.filtered.push(this.filterList[j])
+            }else{
+              this.filterList = this.product
             }
           }
         }
