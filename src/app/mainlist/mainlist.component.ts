@@ -3,7 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { ConnectorService } from '../connector.service';
 import { Tag, TagsService } from '../tags.service';
 import { ModalService } from '../_modal';
+import { Injectable } from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 @Component({
   selector: 'app-mainlist',
   templateUrl: './mainlist.component.html',
@@ -25,12 +29,13 @@ export class MainlistComponent implements OnInit {
   filterList: any
   constructor(private modalService: ModalService, svc: ConnectorService, svt: TagsService) {
     this.product = svc.clothes;
+    this.filterList = this.product
     this.tagsCloth = svt.tags;
-    for (var i = 0; i < this.product.length; i++) {
-      this.currentImge.push(this.product[i].images[0])
+    for (var i = 0; i < this.filterList.length; i++) {
+      this.currentImge.push(this.filterList[i].images[0])
       this.currentIndex.push(0)
     }
-    this.filterList = this.product
+    
 
   }
 

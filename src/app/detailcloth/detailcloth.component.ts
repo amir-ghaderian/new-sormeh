@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConnectorService } from '../connector.service';
+import { MainlistComponent } from '../mainlist/mainlist.component';
 import { TagsService } from '../tags.service';
 @Component({
   selector: 'app-detailcloth',
@@ -17,10 +18,10 @@ export class DetailclothComponent implements OnInit {
   tagsClothes: any;
   targetClothes:any
   
-  constructor(private route: ActivatedRoute, svc: ConnectorService, svt: TagsService) {
-    this.connector = svc.clothes;
-    this.selectedImg = svc.currentImge;
-    this.selectedIndex = svc.currentIndex
+  constructor(private route: ActivatedRoute, svc: ConnectorService, svt: TagsService, sml:MainlistComponent) {
+    this.connector = sml.filterList;
+    this.selectedImg = sml.currentImge;
+    this.selectedIndex = sml.currentIndex
     this.tagsClothes = svt.tags;
 
 
@@ -29,7 +30,7 @@ export class DetailclothComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')
     this.tagIdClothes = this.connector[this.id].tagId;
-    
+    console.log(this.connector[this.id])
 
    
 

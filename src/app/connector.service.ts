@@ -25,11 +25,7 @@ currentIndex: number[] = [];
   ]
   
 constructor(){
-  for (var i = 0; i < this.clothes.length; i++) {
-    this.currentImge.push(this.clothes[i].images[0])
-    this.currentIndex.push(0)
-
-  }
+  
 }
 
 
