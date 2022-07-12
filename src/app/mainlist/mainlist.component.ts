@@ -55,24 +55,29 @@ export class MainlistComponent implements OnInit {
 
 
   setFilter() {
-    this.filterList = this.product
+    
     this.filtered = []
     for (var i = 0; i < this.selectedTags.length; i++) {
-      for (var j = 0; j < this.filterList.length; j++) {
-        for (var c = 0; c < this.filterList[j].tagId.length; c++) {
-          if (this.selectedTags[i] === this.filterList[j].tagId[c]) {
-            if (this.filtered.indexOf(this.filterList[j]) === -1) {
-              this.filtered.push(this.filterList[j])
-            }else{
-              this.filterList = this.product
+      let selectedTag = this.selectedTags[i];
+      for (var j = 0; j < this.product.length; j++) {
+
+        let product = this.product[j];
+        for (var c = 0; c < product.tagId.length; c++) {
+
+          if (selectedTag === product.tagId[c]) {
+
+            if (this.filtered.indexOf(product) === -1) {
+              this.filtered.push(product);
             }
           }
         }
       }
-      if (this.selectedTags.length === 0) {
-        this.filterList = this.product
-      }
-      this.filterList = this.filtered
+    }
+
+    if( this.selectedTags.length === 0) {
+      this.filterList = this.product
+    } else {
+      this.filterList = this.filtered;
     }
 
   }
