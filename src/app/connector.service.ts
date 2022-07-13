@@ -10,7 +10,7 @@ printToConsole(arg: string){
 currentImge: string[] = [];
 currentIndex: number[] = [];
   public clothes:any = [
-    {id: 45, title: 1112, images: ["assets/pic/1.jpg", "assets/pic/11.jpg", "assets/pic/1.jpg"], tagId: [2, 4, 5] },
+    {id: 45, title: 1112, images: ["assets/pic/1.jpg", "assets/pic/11.jpg", "assets/pic/4.jpg"], tagId: [2, 4, 5] },
     {id: 46, title: 1113, images: ["assets/pic/13.jpg", "assets/pic/10.jpg"], tagId: [1, 4,0] },
     {id: 47, title: 1114, images: ["assets/pic/12.jpg", "assets/pic/9.jpg"], tagId: [3, 5, 1] },
     {id: 48, title: 1115, images: ["assets/pic/2.jpg", "assets/pic/8.jpg"], tagId: [1, 4, 6] },

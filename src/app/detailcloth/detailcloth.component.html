@@ -1,14 +1,14 @@
 <p>detailcloth works!</p>
 <p>cloth no:{{id}}</p>
 <div id="parentDetail">
-<div id="card" style="background-image: url({{select.images[0]}});" >
+<div id="card" style="background-image: url({{selectedImg}});" >
    
 </div>
 <div id="detail">
     {{select.title}}
     <br>
     {{select.id}}
-    <div   ><span *ngFor="let btn of select.images  let i=index" id="btn" [ngClass]="{'bgbtn':i}" (click)="showImg(i)">{{i}}</span></div>
+    <div   ><span *ngFor="let btn of select.images  let i=index" id="btn" [ngClass]="{'bgbtn':i=== currentIndex}" (click)="showImg(i)">{{i}}</span></div>
     <div ><span id="tag" *ngFor="let tag of select.tagId" >{{getTagTitle(tag)}}</span></div>
 </div>
 </div>

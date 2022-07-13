@@ -21,7 +21,7 @@ export class MainlistComponent implements OnInit {
   selectedTags: Array<number> = [];
   filtered: number[] = []
   show = false;
-  filterList: any
+  filterList: any;
   constructor(private modalService: ModalService, svc: ConnectorService, svt: TagsService) {
     this.product = svc.clothes;
     this.filterList = this.product
@@ -31,14 +31,15 @@ export class MainlistComponent implements OnInit {
       this.currentIndex.push(0)
     }
     
-console.log(this.filterList)
+
   }
 
   ngOnInit(): void {
   }
   showingImg(id: number, clothesNum: number) {
-    this.filterList[clothesNum].images[0] = this.filterList[clothesNum].images[id];
-    //this.currentIndex[clothesNum] = id;
+    this.filterList[clothesNum].images[0] =this.filterList[clothesNum].images[id];
+    this.currentIndex[clothesNum] = id;
+    
   }
 
 

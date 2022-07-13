@@ -10,13 +10,14 @@ import { TagsService } from '../tags.service';
 
 export class DetailclothComponent implements OnInit {
   id: number = 0;
-  select: any; 
+  select: any;
   tagsClothes: any;
- 
-  
-  constructor(private route: ActivatedRoute,private svc: ConnectorService, svt: TagsService) {
-    
-this.tagsClothes=svt.tags
+  currentIndex: number = 0
+  selectedImg: any;
+
+  constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService) {
+
+    this.tagsClothes = svt.tags
 
   }
 
@@ -25,32 +26,31 @@ this.tagsClothes=svt.tags
 
     if (stringId) {
 
-      this.id = parseInt( stringId );
-      console.log(this.id);
+      this.id = parseInt(stringId);
+
       this.svc.clothes.forEach((element: any) => {
         if (element.id === this.id) {
-          this.select=element;
+          this.select = element;
+          this.selectedImg=this.select.images[0]
         }
       });
-      
-      
+
+
     } else {
       console.log('no id on url')
     }
-    
 
-   
+
+
 
   }
   showImg(i: number) {
-   /// this.selectedImg[this.id] = this.connector[this.id].images[i]
-
-
-    ////this.selectedIndex[this.id] = i;
+    this.selectedImg = this.select.images[i]
+    this.currentIndex = i
 
 
   }
-   getTagTitle(i: number) {
-     return this.tagsClothes[i].title;
-   }
+  getTagTitle(i: number) {
+    return this.tagsClothes[i].title;
+  }
 }
