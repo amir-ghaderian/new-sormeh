@@ -10,7 +10,7 @@ import { TagsService } from '../tags.service';
 })
 
 export class DetailclothComponent implements OnInit {
-  id: any = '';
+  id: number = 0;
   connector: any;
   selectedImg: any;
   selectedIndex: any;
@@ -18,19 +18,30 @@ export class DetailclothComponent implements OnInit {
   tagsClothes: any;
   targetClothes:any
   
-  constructor(private route: ActivatedRoute, svc: ConnectorService, svt: TagsService, sml:MainlistComponent) {
-    this.connector = sml.filterList;
-    this.selectedImg = sml.currentImge;
-    this.selectedIndex = sml.currentIndex
-    this.tagsClothes = svt.tags;
+  constructor(private route: ActivatedRoute,private svc: ConnectorService, svt: TagsService) {
+    
 
 
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id')
-    this.tagIdClothes = this.connector[this.id].tagId;
-    console.log(this.connector[this.id])
+    const stringId = this.route.snapshot.paramMap.get('id');
+
+    if (stringId) {
+
+      this.id = parseInt( stringId );
+      console.log(this.id);
+      this.svc.clothes.forEach((element: any) => {
+        if (element.id === this.id) {
+          console.log(element);
+        }
+      });
+      
+      
+    } else {
+      console.log('no id on url')
+    }
+    
 
    
 

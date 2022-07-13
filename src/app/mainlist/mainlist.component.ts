@@ -3,11 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { ConnectorService } from '../connector.service';
 import { Tag, TagsService } from '../tags.service';
 import { ModalService } from '../_modal';
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
 @Component({
   selector: 'app-mainlist',
   templateUrl: './mainlist.component.html',
