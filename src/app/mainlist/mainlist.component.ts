@@ -31,14 +31,14 @@ export class MainlistComponent implements OnInit {
       this.currentIndex.push(0)
     }
     
-
+console.log(this.filterList)
   }
 
   ngOnInit(): void {
   }
   showingImg(id: number, clothesNum: number) {
-    this.currentImge[clothesNum] = this.product[clothesNum].images[id];
-    this.currentIndex[clothesNum] = id;
+    this.filterList[clothesNum].images[0] = this.filterList[clothesNum].images[id];
+    //this.currentIndex[clothesNum] = id;
   }
 
 

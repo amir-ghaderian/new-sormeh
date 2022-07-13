@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConnectorService } from '../connector.service';
-import { MainlistComponent } from '../mainlist/mainlist.component';
 import { TagsService } from '../tags.service';
 @Component({
   selector: 'app-detailcloth',
@@ -11,16 +10,13 @@ import { TagsService } from '../tags.service';
 
 export class DetailclothComponent implements OnInit {
   id: number = 0;
-  connector: any;
-  selectedImg: any;
-  selectedIndex: any;
-  tagIdClothes: [] = []
+  select: any; 
   tagsClothes: any;
-  targetClothes:any
+ 
   
   constructor(private route: ActivatedRoute,private svc: ConnectorService, svt: TagsService) {
     
-
+this.tagsClothes=svt.tags
 
   }
 
@@ -33,7 +29,7 @@ export class DetailclothComponent implements OnInit {
       console.log(this.id);
       this.svc.clothes.forEach((element: any) => {
         if (element.id === this.id) {
-          console.log(element);
+          this.select=element;
         }
       });
       
@@ -47,14 +43,14 @@ export class DetailclothComponent implements OnInit {
 
   }
   showImg(i: number) {
-    this.selectedImg[this.id] = this.connector[this.id].images[i]
+   /// this.selectedImg[this.id] = this.connector[this.id].images[i]
 
 
-    this.selectedIndex[this.id] = i;
+    ////this.selectedIndex[this.id] = i;
 
 
   }
-   getTagTitle(id: number) {
-     return this.tagsClothes[id].title;
+   getTagTitle(i: number) {
+     return this.tagsClothes[i].title;
    }
 }
