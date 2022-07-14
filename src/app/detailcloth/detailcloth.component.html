@@ -1,14 +1,23 @@
 <p>detailcloth works!</p>
 <p>cloth no:{{id}}</p>
 <div id="parentDetail">
-<div id="card" style="background-image: url({{selectedImg}});" >
-   
-</div>
-<div id="detail">
-    {{select.title}}
-    <br>
-    {{select.id}}
-    <div   ><span *ngFor="let btn of select.images  let i=index" id="btn" [ngClass]="{'bgbtn':i=== currentIndex}" (click)="showImg(i)">{{i}}</span></div>
-    <div ><span id="tag" *ngFor="let tag of select.tagId" >{{getTagTitle(tag)}}</span></div>
-</div>
+    <div id="card" style="background-image: url({{selectedImg}});">
+
+    </div>
+    <div id="detail">
+        {{select.title}}
+
+        <div class="flex"><button class="p-1 bg-gray-100 rounded-xl border-2" (click)="show = !show">{{show ? '^' :
+                'v'}}</button>
+            <p>سایز های موجود</p>
+        </div>
+        <div *ngIf="show" class="flex w-full justify-center"><span class="border-2 p-1"
+                *ngFor="let size of select.size">{{size}}</span></div>
+        <div><span *ngFor="let btn of select.images  let i=index" id="btn" [ngClass]="{'bgbtn':i=== currentIndex}"
+                (click)="showImg(i)">{{i}}</span></div>
+        <div class="flex "><span id="tag" *ngFor="let tag of select.tagId">{{getTagTitle(tag)}}</span>
+            <p> :خصوصیات این مدل</p>
+        </div>
+       <div class=" flex w-full"><button class="transition duration-500 p-1 ease-in-out bg-gray-300 hover:bg-green-400 transform hover:-translate-y-1 hover:scale-110  p-2 rounded-2xl w-16  ">سبد خرید</button></div> 
+    </div>
 </div>
