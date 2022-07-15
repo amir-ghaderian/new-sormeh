@@ -27,14 +27,12 @@ export class MainlistComponent implements OnInit {
     this.filterList = this.product
     this.tagsCloth = svt.tags;
     
-    for (var i = 0; i < this.filterList.length; i++) {
-      this.currentImge.push(this.filterList[i].images[0])
-      this.currentIndex.push(0)
-    }
+   
 
   }
 
   ngOnInit(): void {
+    this.renderList()
   }
   showingImg(id: number, clothesNum: number) {
     this.currentImge[clothesNum] =this.filterList[clothesNum].images[id];
@@ -80,16 +78,18 @@ export class MainlistComponent implements OnInit {
     } else {
       this.filterList = this.filtered;
 
-      ////clear current image
-      this.currentImge=[]
-      this.currentIndex=[]
-      for (var i = 0; i < this.filterList.length; i++) {
-        this.currentImge.push(this.filterList[i].images[0])
-        this.currentIndex.push(0)
-      }
+      this.renderList()
     }
    
 
+  }
+  renderList(){
+ this.currentImge=[]
+ this.currentIndex=[]
+ for (var i = 0; i < this.filterList.length; i++) {
+   this.currentImge.push(this.filterList[i].images[0])
+   this.currentIndex.push(0)
+ }
   }
 
 }
