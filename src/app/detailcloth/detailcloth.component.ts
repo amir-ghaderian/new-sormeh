@@ -14,7 +14,7 @@ export class DetailclothComponent implements OnInit {
   tagsClothes: any;
   currentIndex: number = 0
   selectedImg: any;
-  show=false
+
 
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService) {
 
