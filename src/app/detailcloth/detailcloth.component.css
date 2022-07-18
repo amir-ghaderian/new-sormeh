@@ -30,7 +30,8 @@
     
 }
 .bgbtn{
-    background-color:#1876d1;
+    background-origin: border-box;
+    background-clip: content-box;
 }
 #tag{
     padding: 1em;
