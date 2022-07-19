@@ -11,7 +11,9 @@
             <a [routerLink]="['/detail',pic.id]">
                 <div class="bg-cover w-44  h-60 m-1 rounded-lg" style="background-image: url({{currentImge[i]}});">
                     {{pic.title}}
-                  <div  class=" hidden flex flex-col-reverse -mt-8 w-full h-full  hover:flex"><div class=" flex justify-between   bg-gray-100 "><span *ngFor="let size of pic.size">{{size}}</span></div></div>
+                  <div  class="flex flex-col-reverse -mt-8 w-full h-full  hover:flex">
+                      <div class=" flex justify-between   bg-gray-100 ">
+                          <span *ngFor="let size of pic.size">{{size}}</span></div></div>
                 </div>
             </a>
             <div class="flex justify-center">
