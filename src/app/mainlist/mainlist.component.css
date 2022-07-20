@@ -1,0 +1,5 @@
+#parent:hover #child{
+    background-color: rgb(216, 210, 210);
+    visibility: visible;
+    transition: 0.5s initial;
+}
