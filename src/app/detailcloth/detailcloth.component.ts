@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConnectorService } from '../connector.service';
 import { TagsService } from '../tags.service';
+import { ModalService } from '../_modal';
+
+
 @Component({
   selector: 'app-detailcloth',
   templateUrl: './detailcloth.component.html',
@@ -14,14 +17,14 @@ export class DetailclothComponent implements OnInit {
   tagsClothes: any;
   currentIndex: number = 0
   selectedImg: any;
+  modal: any
 
 
-  constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService) {
-
+  constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService) {
+    this.modal = modalService
     this.tagsClothes = svt.tags
-
+    
   }
-
   ngOnInit(): void {
     const stringId = this.route.snapshot.paramMap.get('id');
 
@@ -32,7 +35,7 @@ export class DetailclothComponent implements OnInit {
       this.svc.clothes.forEach((element: any) => {
         if (element.id === this.id) {
           this.select = element;
-          this.selectedImg=this.select.images[0]
+          this.selectedImg = this.select.images[0]
         }
       });
 
@@ -53,5 +56,9 @@ export class DetailclothComponent implements OnInit {
   }
   getTagTitle(i: number) {
     return this.tagsClothes[i].title;
+  }
+  openModal(id: string) {
+    this.modal.open(id);
+    confirm('hanoz sabtnam nakrdiiii?')
   }
 }
