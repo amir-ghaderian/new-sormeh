@@ -59,6 +59,9 @@ export class DetailclothComponent implements OnInit {
   }
   openModal(id: string) {
     this.modal.open(id);
-    confirm('hanoz sabtnam nakrdiiii?')
+   
   }
+addShopingCart(){
+ 
+}
 }

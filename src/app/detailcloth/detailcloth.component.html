@@ -24,11 +24,15 @@
 				go to shoppingcart
 				</button> 
 				<jw-modal id="custom-modal-1" >
-					
-					
+				<div class="flex justify-evenly"><select class="border-2 rounded-xl" name="" id="">
+						<option *ngFor="let size of select.size" value="">{{size}}:سایز</option>
+					</select>
+					<span>{{select.title}}:مدل</span>
+					<button (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
+				</div>	
 		</jw-modal>
 			</div>
-
+ 
 			
 			
 			
