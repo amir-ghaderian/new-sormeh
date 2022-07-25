@@ -5,6 +5,7 @@ import { TagsService } from '../tags.service';
 import { ModalService } from '../_modal';
 
 
+
 @Component({
   selector: 'app-detailcloth',
   templateUrl: './detailcloth.component.html',
@@ -18,13 +19,14 @@ export class DetailclothComponent implements OnInit {
   currentIndex: number = 0
   selectedImg: any;
   modal: any
-
+  selectedSize:string=''
 
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
     
   }
+  
   ngOnInit(): void {
     const stringId = this.route.snapshot.paramMap.get('id');
 
@@ -62,6 +64,10 @@ export class DetailclothComponent implements OnInit {
    
   }
 addShopingCart(){
- 
+
+}
+onChange(value:string){
+this.selectedSize=value;
+console.log(this.selectedSize)
 }
 }

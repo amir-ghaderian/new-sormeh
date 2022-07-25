@@ -12,7 +12,7 @@ import { NgImageSliderModule } from 'ng-image-slider';
 import { MainlistComponent } from './mainlist/mainlist.component';
 import { ConnectorService } from './connector.service';
 import { DetailclothComponent } from './detailcloth/detailcloth.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +28,8 @@ import { DetailclothComponent } from './detailcloth/detailcloth.component';
     BrowserModule,
     AppRoutingModule,
     ModalModule,
-    NgImageSliderModule 
+    NgImageSliderModule ,
+    FormsModule
   ],
   providers: [
     ConnectorService
