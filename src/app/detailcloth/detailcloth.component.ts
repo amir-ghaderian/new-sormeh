@@ -20,7 +20,7 @@ export class DetailclothComponent implements OnInit {
   selectedImg: any;
   modal: any
   selectedSize:string=''
-
+  cart:Array<any>= [{ size: '', title: "" }];
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
@@ -64,10 +64,13 @@ export class DetailclothComponent implements OnInit {
    
   }
 addShopingCart(){
+  console.log(this.cart)
+this.cart[0].size=this.selectedSize;
+this.cart[0].title=this.select.title;
 
 }
 onChange(value:string){
 this.selectedSize=value;
-console.log(this.selectedSize)
+
 }
 }

@@ -42,7 +42,7 @@
 				<jw-modal id="custom-modal-1">
 					<div class="flex justify-evenly">
 						<select #size  class="border-2 rounded-xl" name="" id="" (change)="onChange(size.value)">
-							<option value="" disabled>Choose a size</option>
+							<option value="" >Choose a size</option>
 							<option *ngFor="let size of select.size" [value]="size">{{size}}</option>
 						</select>
 						<span>{{select.title}}:مدل</span>
