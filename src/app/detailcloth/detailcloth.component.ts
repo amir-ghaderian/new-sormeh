@@ -19,14 +19,14 @@ export class DetailclothComponent implements OnInit {
   currentIndex: number = 0
   selectedImg: any;
   modal: any
-  selectedSize:string=''
-  cart:Array<any>= [{ size: '', title: "" }];
+  selectedSize: string = ''
+  cart: Array<item> = []
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
-    
+
   }
-  
+
   ngOnInit(): void {
     const stringId = this.route.snapshot.paramMap.get('id');
 
@@ -61,16 +61,26 @@ export class DetailclothComponent implements OnInit {
   }
   openModal(id: string) {
     this.modal.open(id);
-   
+
   }
-addShopingCart(){
-  console.log(this.cart)
-this.cart[0].size=this.selectedSize;
-this.cart[0].title=this.select.title;
+  addShopingCart(): void {
 
-}
-onChange(value:string){
-this.selectedSize=value;
 
+    this.cart[0].size = this.selectedSize;
+    this.cart[0].title = this.select.title;
+console.log(this.cart)
+  }
+  onChange(value: string) {
+    this.selectedSize = value;
+
+  }
 }
+export class item {
+  size: string;
+  title: number;
+  constructor(_size: string, _title: number) {
+    this.size = _size;
+    this.title = _title;
+  }
 }
+
