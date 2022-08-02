@@ -5,7 +5,6 @@ import { TagsService } from '../tags.service';
 import { ModalService } from '../_modal';
 
 
-
 @Component({
   selector: 'app-detailcloth',
   templateUrl: './detailcloth.component.html',
@@ -20,7 +19,7 @@ export class DetailclothComponent implements OnInit {
   selectedImg: any;
   modal: any
   selectedSize: string = ''
-  cart: Array<item> = []
+  cart: Array<item> = [{ size: '', title: 0 }]
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
@@ -67,11 +66,12 @@ export class DetailclothComponent implements OnInit {
 
 
     this.cart[0].size = this.selectedSize;
-    this.cart[0].title = this.select.title;
-console.log(this.cart)
+    this.cart[0].title=this.select.title
+    console.log(this.cart)
   }
   onChange(value: string) {
     this.selectedSize = value;
+    console.log(this.selectedSize)
 
   }
 }
