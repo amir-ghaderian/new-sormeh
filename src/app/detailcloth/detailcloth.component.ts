@@ -19,7 +19,7 @@ export class DetailclothComponent implements OnInit {
   selectedImg: any;
   modal: any
   selectedSize: string = ''
-  cart: Array<item> = [{ size: '', title: 0 }]
+  cart: Array<item> = []
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
@@ -62,11 +62,15 @@ export class DetailclothComponent implements OnInit {
     this.modal.open(id);
 
   }
-  addShopingCart(): void {
+  addShopingCart() {
 
-
-    this.cart[0].size = this.selectedSize;
-    this.cart[0].title=this.select.title
+let customObj =new item()
+   customObj.size = this.selectedSize;
+   customObj.id = this.select.id; 
+   this.cart.push(customObj);
+  
+   // this.cart[0].size = this.selectedSize;
+   
     console.log(this.cart)
   }
   onChange(value: string) {
@@ -77,10 +81,10 @@ export class DetailclothComponent implements OnInit {
 }
 export class item {
   size: string;
-  title: number;
-  constructor(_size: string, _title: number) {
+  id: number;
+  constructor(_size: string, _id: number) {
     this.size = _size;
-    this.title = _title;
+    this.id = _id;
   }
 }
 
