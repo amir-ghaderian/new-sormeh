@@ -64,13 +64,9 @@ export class DetailclothComponent implements OnInit {
   }
   addShopingCart() {
 
-let customObj =new item()
-   customObj.size = this.selectedSize;
-   customObj.id = this.select.id; 
-   this.cart.push(customObj);
-  
-   // this.cart[0].size = this.selectedSize;
-   
+   let customObj =new item(this.selectedSize, this.select.id)
+
+   this.cart.push(customObj);  
     console.log(this.cart)
   }
   onChange(value: string) {
