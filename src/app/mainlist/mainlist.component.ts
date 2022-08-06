@@ -1,4 +1,3 @@
-import { taggedTemplate } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ConnectorService } from '../connector.service';
 import { Tag, TagsService } from '../tags.service';

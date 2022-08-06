@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConnectorService } from '../connector.service';
+import { item, ShoppingCartService } from '../shopping-cart.service';
 import { TagsService } from '../tags.service';
 import { ModalService } from '../_modal';
 
@@ -19,10 +20,12 @@ export class DetailclothComponent implements OnInit {
   selectedImg: any;
   modal: any
   selectedSize: string = ''
-  cart: Array<item> = []
-  constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService) {
+  cart: any;
+
+  constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService, scs: ShoppingCartService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
+    this.cart = scs.cart;
 
   }
 
@@ -64,23 +67,16 @@ export class DetailclothComponent implements OnInit {
   }
   addShopingCart() {
 
-   let customObj =new item(this.selectedSize, this.select.id)
+    let customObj = new item(this.selectedSize, this.select.id)
 
-   this.cart.push(customObj);  
+    this.cart.push(customObj);
     console.log(this.cart)
   }
   onChange(value: string) {
     this.selectedSize = value;
-    console.log(this.selectedSize)
+
 
   }
 }
-export class item {
-  size: string;
-  id: number;
-  constructor(_size: string, _id: number) {
-    this.size = _size;
-    this.id = _id;
-  }
-}
+
 
