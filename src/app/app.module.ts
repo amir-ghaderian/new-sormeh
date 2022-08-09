@@ -13,6 +13,7 @@ import { MainlistComponent } from './mainlist/mainlist.component';
 import { ConnectorService } from './connector.service';
 import { DetailclothComponent } from './detailcloth/detailcloth.component';
 import { FormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     SignupComponent,
     SliderComponent,
     MainlistComponent,
-    DetailclothComponent
+    DetailclothComponent,
+    CartComponent
     
   ],
   imports: [

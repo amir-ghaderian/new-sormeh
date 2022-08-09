@@ -7,6 +7,7 @@ import { SignupComponent } from './signup/signup.component';
 import { SliderComponent } from './slider/slider.component';
 import { MainlistComponent } from './mainlist/mainlist.component';
 import { DetailclothComponent } from './detailcloth/detailcloth.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,8 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'slider',component:SliderComponent},
   {path:'',component:MainlistComponent},
-  {path:'detail/:id',component:DetailclothComponent}
+  {path:'detail/:id',component:DetailclothComponent},
+  {path:'cart',component:CartComponent}
 
 ];
 @NgModule({
@@ -24,4 +26,4 @@ const routes: Routes = [
 })
 
 export class AppRoutingModule { }
-export const routingComponents=[LoginComponent,SignupComponent,SliderComponent,MainlistComponent,DetailclothComponent]
+export const routingComponents=[LoginComponent,SignupComponent,SliderComponent,MainlistComponent,DetailclothComponent,CartComponent]
