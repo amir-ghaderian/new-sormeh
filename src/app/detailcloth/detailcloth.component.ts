@@ -70,7 +70,8 @@ export class DetailclothComponent implements OnInit {
     let customObj = new item(this.selectedSize, this.select.id)
 
     this.cart.push(customObj);
-    console.log(this.cart)
+    console.log(this.cart);
+    this.modal.close('custom-modal-1')
   }
   onChange(value: string) {
     this.selectedSize = value;
