@@ -67,10 +67,10 @@ export class DetailclothComponent implements OnInit {
   }
   addShopingCart() {
 
-    let customObj = new item(this.selectedSize, this.select.id)
+    let customObj = new item(this.selectedSize, this.select.id,this.select.title,this.selectedImg,this.select.price)
 
     this.cart.push(customObj);
-    console.log(this.cart);
+    
     this.modal.close('custom-modal-1')
   }
   onChange(value: string) {
