@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,7 +9,9 @@ import { Component, Input, OnInit } from '@angular/core';
 
 export class SignupComponent implements OnInit {
   customer: Array<any> = []
-  constructor() { }
+  constructor(svCustomer: CustomerService) {
+    this.customer = svCustomer.customer;
+  }
   @Input() newCustomer: any = {
     customerName: "",
     customerEmail: "",
@@ -18,7 +21,7 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
   }
   addCustomer() {
-    this.customer.push (this.newCustomer);
+    this.customer.push(this.newCustomer);
     console.log(this.customer)
   }
 
