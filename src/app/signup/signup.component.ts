@@ -14,6 +14,7 @@ export class SignupComponent implements OnInit {
   }
   @Input() newCustomer: any = {
     customerName: "",
+    customerSurName:"",
     customerEmail: "",
     phoneNmber: 0,
 

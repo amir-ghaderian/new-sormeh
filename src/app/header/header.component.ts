@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CustomerService } from '../customer.service';
 import { ShoppingCartService } from '../shopping-cart.service';
 
 @Component({
@@ -8,14 +9,15 @@ import { ShoppingCartService } from '../shopping-cart.service';
 })
 export class HeaderComponent implements OnInit {
   shopingCart: any;
- 
-  constructor(svSc: ShoppingCartService) {
+  customer: any;
+  constructor(svSc: ShoppingCartService, svCustomer: CustomerService) {
     this.shopingCart = svSc.cart;
+    this.customer=svCustomer.customer;
   }
 
   ngOnInit(): void {
 
-   
+
   }
 
 }
