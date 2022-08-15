@@ -14,6 +14,7 @@ import { ConnectorService } from './connector.service';
 import { DetailclothComponent } from './detailcloth/detailcloth.component';
 import { FormsModule } from '@angular/forms';
 import { CartComponent } from './cart/cart.component';
+import { FooterComponent } from './footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { CartComponent } from './cart/cart.component';
     SliderComponent,
     MainlistComponent,
     DetailclothComponent,
-    CartComponent
+    CartComponent,
+    FooterComponent
     
   ],
   imports: [

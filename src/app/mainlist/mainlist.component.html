@@ -1,8 +1,8 @@
 <div class="bg-cover w-full bg-center mt-8 h-72 bg-gray-100"
     style="background-image: url(assets/pic/photo-1578932750294-f5075e85f44a.jpeg);"></div>
-    <div  class=" flex justify-evenly "><button class=" bg-green-300  rounded-xl" (click)="setFilter()" >فیلتر</button> <span class="w-28 h-8 bg-gray-200 text-gray-400 text-center cursor-pointer rounded-xl hover:text-black 	"
+    <div  class=" flex lg: justify-evenly  md: flex-wrap "><button class=" bg-green-300  rounded-xl transform hover:-translate-y-1 hover:scale-110  p-2 rounded-2xl w-16" (click)="setFilter()" >فیلتر</button> <span class="w-28 h-8 bg-gray-200 text-gray-400 text-center cursor-pointer rounded-xl hover:text-black md:text-xs lg:text-xl	"
         *ngFor="let tag of  tagsCloth let i=index" (click)="tagClick(tag.id)"
-[ngClass]="{'bg-red-300':selectedTags.lastIndexOf(tag.id) >= 0}">{{tag.title}}</span> <p>به دلخواه خود فیلتر کنیید</p></div>
+[ngClass]="{'bg-red-300':selectedTags.lastIndexOf(tag.id) >= 0}">{{tag.title}}</span> <p> به دلخواه خود فیلتر کنیید</p></div>
 <div class="w-full flex justify-center mt-4">
    
     <div class="  flex flex-wrap max-w-screen-xl justify-center mt-4">
