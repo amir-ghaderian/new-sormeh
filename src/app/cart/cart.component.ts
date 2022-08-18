@@ -10,19 +10,23 @@ import { ShoppingCartService } from '../shopping-cart.service';
 export class CartComponent implements OnInit {
   cart: any;
   customer: any;
-  goz:any;
+  prices: any;
+  sam: number = 0;
   constructor(scsc: ShoppingCartService, svCustomer: CustomerService) {
     this.cart = scsc.cart;
     this.customer = svCustomer.customer;
   }
 
   ngOnInit(): void {
-    this.total()
-  }
-  total() {
-    for (var i = 0; i < this.cart.length; i++) {
-  this.goz= parseInt(this.cart[i].price);
-console.log()
+    this.prices = this.cart.map((a: { price: number; }) => a.price);
+
+    for (var i = 0; i < this.prices.length; i++) {
+      this.sam += this.prices[i]
     }
+
   }
+
+
+
+
 }

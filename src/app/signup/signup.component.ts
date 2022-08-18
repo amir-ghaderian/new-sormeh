@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
   }
   addCustomer() {
     this.customer.push(this.newCustomer);
-    console.log(this.customer)
+    
   }
 
 }
