@@ -42,7 +42,7 @@
 							<option value="" >Choose a size</option>
 							<option *ngFor="let size of select.size" [value]="size">{{size}}</option>
 						</select>
-						<span>{{select.title}}:مدل</span>
+						<span>نام کالا:{{select.title}}</span>
 						<button (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
 					</div>
 				</jw-modal>
