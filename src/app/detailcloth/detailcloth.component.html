@@ -30,6 +30,7 @@
 						d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
 					</path>
 				</svg><span class="p-1  border border-gray-200 " *ngFor="let size of select.size">{{size}}</span></p>
+				<span class=" text-3xl ">{{select.price}}</span>
 			<p class="pt-8 text-sm">short description </p>
 			<div class="pt-12 pb-8">
 				<button (click)="openModal('custom-modal-1')"
@@ -37,13 +38,15 @@
 					go to shoppingcart
 				</button>
 				<jw-modal id="custom-modal-1">
-					<div class="flex justify-evenly">
+					<div class="flex justify-evenly items-center	">
+						<button (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
+
 						<select #size  class="border-2 rounded-xl" name="" id="" (change)="onChange(size.value)">
 							<option value="" >Choose a size</option>
 							<option *ngFor="let size of select.size" [value]="size">{{size}}</option>
 						</select>
 						<span>نام کالا:{{select.title}}</span>
-						<button (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
+						<span>قیمت:{{select.price}}</span>
 					</div>
 				</jw-modal>
 			</div>
