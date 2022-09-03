@@ -8,6 +8,7 @@ import { CustomerService } from '../customer.service';
 })
 
 export class SignupComponent implements OnInit {
+  alert:boolean=false;
   customer: Array<any> = []
   constructor(svCustomer: CustomerService) {
     this.customer = svCustomer.customer;
@@ -23,7 +24,10 @@ export class SignupComponent implements OnInit {
   }
   addCustomer() {
     this.customer.push(this.newCustomer);
-    
+    this.alert=true
+  }
+  closeAlert(){
+    this.alert=false
   }
 
 }
