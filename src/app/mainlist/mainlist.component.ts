@@ -25,7 +25,9 @@ export class MainlistComponent implements OnInit {
     this.product = svc.clothes;
     this.filterList = this.product
     this.tagsCloth = svt.tags;
-
+    for (var i = 0; i < this.product, length; i++){
+      this.currentIndex.push
+    }
 
 
   }
@@ -90,5 +92,17 @@ export class MainlistComponent implements OnInit {
       this.currentIndex.push(0)
     }
   }
+  previous(id: number, clothesNum: number) {
+    this.currentIndex[clothesNum] -= 1;
 
+    this.currentImge[clothesNum] = this.product[clothesNum].images[this.currentIndex[clothesNum]];
+
+  }
+  next(id: number, clothesNum: number) {
+    this.currentIndex[clothesNum] += 1
+    this.currentImge[clothesNum] = this.product[clothesNum].images[this.currentIndex[clothesNum]];
+    
+
+
+  }
 }
