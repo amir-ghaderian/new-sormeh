@@ -12,7 +12,7 @@
 
     <div class="  flex flex-wrap max-w-screen-xl justify-center mt-4">
         <div *ngFor="let pic of filterList let i=index">
-            <a [routerLink]="['/detail',pic.id]"></a> 
+            <a [routerLink]="['/detail',pic.id]">
             <div class="bg-cover  relative  m-1 rounded-lg md: w-44 h-56 lg:w-60 h-64"
                 style="background-image: url({{currentImge[i]}});">
                
@@ -65,6 +65,7 @@
 
             <div class="flex justify-center">
             </div>
+        </a> 
         </div>
     </div>
 
