@@ -12,25 +12,28 @@
 
     <div class="  flex flex-wrap max-w-screen-xl justify-center mt-4">
         <div *ngFor="let pic of filterList let i=index">
-            <a [routerLink]="['/detail',pic.id]">
+
             <div class="bg-cover  relative  m-1 rounded-lg md: w-44 h-56 lg:w-60 h-64"
                 style="background-image: url({{currentImge[i]}});">
-               
+
                 <div id="parent" class="flex flex-col justify-between  w-full h-full  ">
-
-
+                   
                     <div id="child" class=" flex justify-between   invisible  "> {{pic.title}}
 
-                      
-                     <span *ngFor="let size of pic.size">{{size}}</span>
-                     
+
+                        <span *ngFor="let size of pic.size">{{size}}</span>
+
                     </div>
-                
+                    <a class="flex justify-center" [routerLink]="['/detail',pic.id]">
+                        <div id="center" class="w-2/3 h-52">
+
+                        </div>
+                    </a>
                     <div class="flex justify-between">
                         <div *ngFor="let image of pic.images let l=index " class="inline-flex">
                             <button (click)="next(l,i)" type="button"
                                 [ngClass]="{'hidden'  : pic.images.length-1 <=   this.currentIndex[i]}"
-                                class="right-0 bottom-28 absolute text-gray-400 text-4xl cursor-pointer font-extrabold text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:focus:ring-blue-800">
+                                class="right-0 bottom-28 absolute text-gray-400 text-4xl cursor-pointer font-extrabold text-gray-700 border border-gray-700 hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-gray-500 dark:text-gray-500 dark:hover:text-white dark:focus:ring-gray-800">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -42,7 +45,7 @@
 
                             <button (click)="previous(l,i)" type="button"
                                 [ngClass]="{'hidden'  : 0 >=   this.currentIndex[i]}"
-                                class=" rotate-180 left-0 bottom-28 absolute text-gray-400 text-4xl font-extrabold text-blue-700 border border-blue-700 hover:bg-blue-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center ">
+                                class=" rotate-180 left-0 bottom-28 absolute text-gray-700 border border-gray-700 hover:bg-gray-700 hover:text-white focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center dark:border-gray-500 dark:text-gray-500 dark:hover:text-white dark:focus:ring-gray-800">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -51,21 +54,21 @@
                                 </svg>
                                 <span class="sr-only">Icon description</span>
                             </button>
-                           <!-- <div class="flex justify-between mt-16"> <span (click)="showingImg(l,i)" class="absolute bottom-0 p-1 cursor-pointer border-2 border-black-600" [ngClass]="{'bg-gray-300 rounded-xl':l ===  currentIndex[i]}" >b</span></div> -->
+                            <!-- <div class="flex justify-between mt-16"> <span (click)="showingImg(l,i)" class="absolute bottom-0 p-1 cursor-pointer border-2 border-black-600" [ngClass]="{'bg-gray-300 rounded-xl':l ===  currentIndex[i]}" >b</span></div> -->
 
                         </div>
 
                     </div>
-                    
+
                     <span id="child" class="bg-gray-100 text-center">{{pic.price}}</span>
-                    
+
                 </div>
 
             </div>
 
             <div class="flex justify-center">
             </div>
-        </a> 
+
         </div>
     </div>
 
