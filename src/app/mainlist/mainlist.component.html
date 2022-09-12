@@ -2,8 +2,8 @@
     style="background-image: url(assets/pic/photo-1578932750294-f5075e85f44a.jpeg);"></div>
 <div class=" flex lg: justify-evenly  md: flex-wrap "> <span
         class="w-28 h-8 bg-gray-200 text-gray-400 text-center cursor-pointer rounded-xl hover:text-black md:text-xs lg:text-xl	"
-        *ngFor="let tag of  tagsCloth let i=index" (click)="tagClick(tag.id)"  (click)="setFilter()"
-        [ngClass]="{'bg-red-300':selectedTags.lastIndexOf(tag.id) >= 0}">{{tag.title}}</span>
+        *ngFor="let tag of  tagsCloth let i=index" 
+        [ngClass]="{'bg-red-300':selectedTags.lastIndexOf(tag.id) >= 0}"  (click)="setFilter(tag.id)">{{tag.title}}</span>
     <p> به دلخواه خود فیلتر کنیید</p>
 </div>
 <div class="w-full flex justify-center mt-4">

@@ -25,7 +25,7 @@ export class MainlistComponent implements OnInit {
     this.product = svc.clothes;
     this.filterList = this.product
     this.tagsCloth = svt.tags;
-    for (var i = 0; i < this.product, length; i++){
+    for (var i = 0; i < this.product, length; i++) {
       this.currentIndex.push
     }
 
@@ -42,20 +42,20 @@ export class MainlistComponent implements OnInit {
   }
 
 
-  tagClick(id: number) {
+  tagClick() {
+
+  }
+
+
+
+  setFilter(id: number) {
     if (this.selectedTags.indexOf(id) === -1) {
       this.selectedTags.push(id)
     } else {
       let location = this.selectedTags.lastIndexOf(id);
       this.selectedTags.splice(location, 1)
     }
-    return this.selectedTags
-  }
-
-
-
-  setFilter() {
-
+  
     this.filtered = []
     for (var i = 0; i < this.selectedTags.length; i++) {
       let selectedTag = this.selectedTags[i];
@@ -101,7 +101,7 @@ export class MainlistComponent implements OnInit {
   next(id: number, clothesNum: number) {
     this.currentIndex[clothesNum] += 1
     this.currentImge[clothesNum] = this.product[clothesNum].images[this.currentIndex[clothesNum]];
-    
+
 
 
   }
