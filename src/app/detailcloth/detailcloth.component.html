@@ -10,9 +10,15 @@
 
 		<div class="p-4 md:p-12 text-center lg:text-left">
 			<!-- Image for mobile view-->
-			<div class="block lg:hidden  max-h-screen shadow-xl  -mt-16  w-60 h-60  bg-cover bg-center "
+			<div class="block lg:hidden relative max-h-screen shadow-xl  -mt-16  w-80 h-80  bg-cover bg-center "
 				style="background-image: url({{selectedImg}})"></div>
-
+				<div class="flex pt-4">
+				<div class="p-1 w-20 h-20 bg-cover border border-gray-200 rounded-lg"
+				*ngFor="let btn of select.images let i=index" style="background-image: url({{select.images[i]}})"
+				[ngClass]="{'bgbtn':i=== currentIndex}" (click)="showImg(i)">
+			
+			</div>
+		</div>
 			<h1 class="text-3xl font-bold pt-8 lg:pt-0">{{select.title}}</h1>
 			<div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-blue-500 opacity-25"></div>
 			<p class="pt-4 text-base flex items-center justify-center lg:justify-start"><svg
@@ -32,6 +38,9 @@
 				</svg><span class="p-1  border border-gray-200 " *ngFor="let size of select.size">{{size}}</span></p>
 				<span class=" text-3xl ">{{select.price}}</span>
 			<p class="pt-8 text-sm">short description </p>
+			<div class="flex justify-center">
+				
+			</div>
 			<div class="pt-12 pb-8">
 				<button (click)="openModal('custom-modal-1')"
 					class="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
@@ -56,11 +65,7 @@
 
 
 		</div>
-		<div class="flex justify-center">
-			<div class="p-1 w-20 h-20 bg-cover border border-gray-200 rounded-lg"
-				*ngFor="let btn of select.images let i=index" style="background-image: url({{select.images[i]}})"
-				[ngClass]="{'bgbtn':i=== currentIndex}" (click)="showImg(i)"></div>
-		</div>
+	
 
 	</div>
 

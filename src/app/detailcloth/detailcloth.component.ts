@@ -21,12 +21,13 @@ export class DetailclothComponent implements OnInit {
   modal: any
   selectedSize: string = ''
   cart: any;
+  cloths:any;
 
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService, scs: ShoppingCartService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
     this.cart = scs.cart;
-
+this.cloths=svc.clothes;
   }
 
   ngOnInit(): void {
@@ -78,6 +79,7 @@ export class DetailclothComponent implements OnInit {
 
 
   }
+ 
 }
 
 
