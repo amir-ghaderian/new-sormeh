@@ -47,15 +47,16 @@
 					 add to shoppingcart
 				</button>
 				<jw-modal id="custom-modal-1">
-					<div class="flex justify-evenly items-center flex-wrap flex-row-reverse	 rounded-2xl	">
-						<button (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
+					<div class="flex justify-evenly items-center flex-wrap 	 rounded-2xl	">
 
-						<select #size  class="border-2 rounded-xl" name="" id="" (change)="onChange(size.value)">
-							<option value="" >Choose a size</option>
-							<option *ngFor="let size of select.size" [value]="size">{{size}}</option>
+						<select #size  class="border-2 rounded-xl" name="" id="" (change)="onChange(size.value)" >
+							<option  value="" >Choose a size</option>
+							<option *ngFor="let size of select.size" [value]="size"  >{{size}}</option>
 						</select>
 						<span>نام کالا:{{select.title}}</span>
 						<span>قیمت:{{select.price}}</span>
+						<button *ngIf="show" (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
+						
 					</div>
 				</jw-modal>
 			</div>

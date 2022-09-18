@@ -21,13 +21,14 @@ export class DetailclothComponent implements OnInit {
   modal: any
   selectedSize: string = ''
   cart: any;
-  cloths:any;
+  cloths: any;
+  show:boolean=false;
 
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService, scs: ShoppingCartService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
     this.cart = scs.cart;
-this.cloths=svc.clothes;
+    this.cloths = svc.clothes;
   }
 
   ngOnInit(): void {
@@ -68,18 +69,19 @@ this.cloths=svc.clothes;
   }
   addShopingCart() {
 
-    let customObj = new item(this.selectedSize, this.select.id,this.select.title,this.selectedImg,this.select.price)
+    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price)
 
     this.cart.push(customObj);
-    
+
     this.modal.close('custom-modal-1')
   }
   onChange(value: string) {
+    this.show=true
     this.selectedSize = value;
 
 
   }
- 
+
 }
 
 
