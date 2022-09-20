@@ -50,13 +50,23 @@
 					<div class="flex justify-evenly items-center flex-wrap 	 rounded-2xl	">
 
 						<select #size  class="border-2 rounded-xl" name="" id="" (change)="onChange(size.value)" >
-							<option  value="" >Choose a size</option>
+							<option  value=""    >Choose a size</option>
 							<option *ngFor="let size of select.size" [value]="size"  >{{size}}</option>
 						</select>
 						<span>نام کالا:{{select.title}}</span>
 						<span>قیمت:{{select.price}}</span>
-						<button *ngIf="show" (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
-						
+						<button  (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
+						<div *ngIf="alert" class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-violet-500">
+							<span class="text-xl inline-block mr-5 align-middle">
+							  <i class="fas fa-bell"></i>
+							</span>
+							<span class="inline-block align-middle mr-8">
+							  <b class="capitalize">select size!</b>
+							</span>
+							<button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" (click)="alert = false">
+							  <span>×</span>
+							</button>
+						  </div>
 					</div>
 				</jw-modal>
 			</div>

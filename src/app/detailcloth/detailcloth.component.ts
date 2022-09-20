@@ -23,6 +23,7 @@ export class DetailclothComponent implements OnInit {
   cart: any;
   cloths: any;
   show:boolean=false;
+  alert:boolean=false;
 
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService, scs: ShoppingCartService) {
     this.modal = modalService
@@ -72,8 +73,10 @@ export class DetailclothComponent implements OnInit {
     let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price)
 
     this.cart.push(customObj);
-
-    this.modal.close('custom-modal-1')
+    if(this.show===false){
+      this.alert=true;
+     let customObj=''
+    }
   }
   onChange(value: string) {
     this.show=true
