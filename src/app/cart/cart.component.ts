@@ -35,6 +35,11 @@ export class CartComponent implements OnInit {
       this.cart.splice(this.index, 1);
     }
   }
+addOne(){
 
+}
+giveOne(){
+
+}
 
 }
