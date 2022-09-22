@@ -14,7 +14,7 @@ export class CartComponent implements OnInit {
   sum: number = 0;
   index: any;
   default: number = 1
-  priceItem=0
+
   constructor(scsc: ShoppingCartService, svCustomer: CustomerService) {
     this.cart = scsc.cart;
     this.customer = svCustomer.customer;
@@ -25,7 +25,7 @@ export class CartComponent implements OnInit {
     this.prices = this.cart.map((a: { price: number; }) => a.price);
 
     for (var i = 0; i < this.prices.length; i++) {
-      this.priceItem=this.cart[i].price;
+
 
       this.sum += this.prices[i]
 
@@ -40,16 +40,16 @@ export class CartComponent implements OnInit {
       this.cart.splice(this.index, 1);
     }
   }
-  addOne() {
+  addOne(index: number) {
     this.default += 1
-    for (var i = 0; i < this.cart.length; i++) {
-      this.priceItem=this.cart[i].price
-     this.priceItem= this.cart[i].price * this.default
 
-    }
-  }
-    giveOne(){
+    console.log(this.default)
+    this.prices[index] = this.cart[index].price * this.default
 
-    }
 
   }
+  giveOne() {
+
+  }
+
+}
