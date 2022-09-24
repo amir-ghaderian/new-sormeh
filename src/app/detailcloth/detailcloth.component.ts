@@ -22,6 +22,7 @@ export class DetailclothComponent implements OnInit {
   selectedSize: string = ''
   cart: any;
   cloths: any;
+  quntity:number=0
   show:boolean=false;
   alert:boolean=false;
 
@@ -70,7 +71,7 @@ export class DetailclothComponent implements OnInit {
   }
   addShopingCart() {
 
-    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price)
+    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price,this.quntity)
 
     this.cart.push(customObj);
     if(this.show===false){

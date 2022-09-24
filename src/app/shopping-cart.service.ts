@@ -14,11 +14,13 @@ export class item {
   title:string;
   image:string;
   price:string;
-  constructor(_size: string, _id: number,_title:string,_image:string,_price:string) {
+  quntitiy:number=0
+  constructor(_size: string, _id: number,_title:string,_image:string,_price:string,_quntity:number) {
     this.size = _size;
     this.id = _id;
     this.title=_title;
     this.image=_image;
-    this.price=_price
+    this.price=_price;
+    this.quntitiy=_quntity
   }
 }
