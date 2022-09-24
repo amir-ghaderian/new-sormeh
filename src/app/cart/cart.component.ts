@@ -13,8 +13,8 @@ export class CartComponent implements OnInit {
   prices: any;
   sum: number = 0;
   index: any;
-  default: number = 1
-
+  default: number = 1;
+  
   constructor(scsc: ShoppingCartService, svCustomer: CustomerService) {
     this.cart = scsc.cart;
     this.customer = svCustomer.customer;
@@ -41,9 +41,10 @@ export class CartComponent implements OnInit {
     }
   }
   addOne(index: number) {
+    
     this.default += 1
 
-    console.log(this.default)
+
     this.prices[index] = this.cart[index].price * this.default
 
 
