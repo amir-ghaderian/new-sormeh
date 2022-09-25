@@ -22,9 +22,9 @@ export class DetailclothComponent implements OnInit {
   selectedSize: string = ''
   cart: any;
   cloths: any;
-  quntity:number=0
-  show:boolean=false;
-  alert:boolean=false;
+  quntity: number = 1
+  show: boolean = false;
+  alert: boolean = false;
 
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService, scs: ShoppingCartService) {
     this.modal = modalService
@@ -70,17 +70,16 @@ export class DetailclothComponent implements OnInit {
 
   }
   addShopingCart() {
-
-    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price,this.quntity)
+    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity)
 
     this.cart.push(customObj);
-    if(this.show===false){
-      this.alert=true;
-     let customObj=''
+    if (this.show === false) {
+      this.alert = true;
+      let customObj = ''
     }
   }
   onChange(value: string) {
-    this.show=true
+    this.show = true
     this.selectedSize = value;
 
 

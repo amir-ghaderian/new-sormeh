@@ -46,12 +46,16 @@ export class CartComponent implements OnInit {
     
 
 
-    this.prices[index] = this.cart[index].price * (this.cart[index].quntitiy +1) 
+    this.prices[index] = this.cart[index].price * (this.cart[index].quntitiy) 
 
 
   }
-  giveOne() {
+  giveOne(index:number) {
+    this.cart[index].quntitiy -=1
+    
 
+
+    this.prices[index] =  this.prices[index] - this.cart[index].price ; 
   }
 
 }
