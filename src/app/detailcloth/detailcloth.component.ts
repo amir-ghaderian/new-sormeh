@@ -22,7 +22,7 @@ export class DetailclothComponent implements OnInit {
   selectedSize: string = ''
   cart: any;
   cloths: any;
-  quntity: number = 1
+  quntity: any
   show: boolean = false;
   alert: boolean = false;
 
@@ -43,7 +43,8 @@ export class DetailclothComponent implements OnInit {
       this.svc.clothes.forEach((element: any) => {
         if (element.id === this.id) {
           this.select = element;
-          this.selectedImg = this.select.images[0]
+          this.selectedImg = this.select.images[0];
+          this.quntity = this.select.quntity;
         }
       });
 
@@ -70,7 +71,7 @@ export class DetailclothComponent implements OnInit {
 
   }
   addShopingCart() {
-    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity)
+    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.select.quntity)
 
     this.cart.push(customObj);
     if (this.show === false) {
@@ -84,6 +85,16 @@ export class DetailclothComponent implements OnInit {
 
 
   }
+  addOne() {
+
+    this.select.quntity += 1;
+    this.select.price = this.select.quntity * this.select.price;
+
+  }
+  giveOne() {
+    this.cart.quntitiy -= 1;
+  }
+
 
 }
 
