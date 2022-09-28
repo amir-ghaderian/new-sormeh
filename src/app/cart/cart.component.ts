@@ -14,22 +14,18 @@ export class CartComponent implements OnInit {
   sum: number = 0;
   index: any;
   default: number = 1;
+  
 
   constructor(scsc: ShoppingCartService, svCustomer: CustomerService) {
     this.cart = scsc.cart;
     this.customer = svCustomer.customer;
-
+  
   }
 
   ngOnInit(): void {
-    this.prices = this.cart.map((a: { price: number; }) => a.price);
+    // this.prices = this.cart.map((a: { price: number; }) => a.price);
 
-    for (var i = 0; i < this.prices.length; i++) {
-
-
-      this.sum += this.prices[i]
-
-    }
+  
 
   }
 
