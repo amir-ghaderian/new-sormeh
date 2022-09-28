@@ -22,9 +22,10 @@ export class DetailclothComponent implements OnInit {
   selectedSize: string = ''
   cart: any;
   cloths: any;
-  quntity: number=1
+  quntity: number = 1
   show: boolean = false;
   alert: boolean = false;
+  totalPriceItem: any
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService, scs: ShoppingCartService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
@@ -70,7 +71,8 @@ export class DetailclothComponent implements OnInit {
 
   }
   addShopingCart() {
-    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity)
+    this.totalPriceItem = this.quntity * this.select.price;
+    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
 
     this.cart.push(customObj);
     if (this.show === false) {
@@ -87,7 +89,7 @@ export class DetailclothComponent implements OnInit {
   addOne() {
 
     this.quntity += 1;
-    
+
 
   }
   giveOne() {
