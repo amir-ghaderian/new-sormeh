@@ -48,11 +48,6 @@
 				</button>
 				<jw-modal id="custom-modal-1">
 					<div class="flex justify-evenly items-center flex-wrap 	 rounded-2xl	">
-						
-						<select #size  class="border-2 rounded-xl" name="" id="" (change)="onChange(size.value)" >
-							<option  value=""    >Choose a size</option>
-							<option *ngFor="let size of select.size" [value]="size"  >{{size}}</option>
-						</select>
 						<div class="flex justify-center w-1/5">
 							<svg  (click)="giveOne()" class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
 							</svg>
@@ -63,6 +58,13 @@
 							</svg>
 						   
 						  </div>
+						  <div class="flex items-center">
+							<span class="mr-2.5	">Choose your</span>
+							<select #size  class="border-2 rounded-xl" name="" id="" (change)="onChange(size.value)" >
+								<option selected="true" disabled="disabled">size</option>
+								<option *ngFor="let size of select.size" [value]="size"  >{{size}}</option>
+							</select>
+						</div>
 						<span>نام کالا:{{select.title}}</span>
 						<span>قیمت:{{select.price}}</span>
 						<button  (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
