@@ -23,10 +23,9 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.totalPricesItems = this.cart.map((a: { totalPriceItem: number; }) => a.totalPriceItem);
 
-   
-    
+    /// this.totalPricesItems = this.cart.map((a: { totalPrice: number; }) => a.totalPrice);
+
 
   }
 
@@ -37,20 +36,29 @@ export class CartComponent implements OnInit {
       this.cart.splice(this.index, 1);
     }
   }
+
   addOne(index: number) {
 
     this.cart[index].quntitiy += 1;
-    this.totalPricesItems[index] = this.cart[index].price * this.cart[index].quntitiy;
-  
+    this.cart[index].totalPrice = this.cart[index].price * this.cart[index].quntitiy;
+
 
 
 
   }
   giveOne(index: number) {
     this.cart[index].quntitiy -= 1;
-    this.totalPricesItems[index] = this.totalPricesItems[index] - this.cart[index].price;
-   
+    this.cart[index].totalPrice = this.cart[index].totalPrice - this.cart[index].price;
+
   }
 
-
+  calculationSum() {
+  
+    this.sum = 0
+    for (var i = 0; i < this.cart.length; i++) {
+      this.sum += this.cart[i].totalPrice;
+    }
+    this.totalPricesItems = []
+    return this.sum;
+  }
 }

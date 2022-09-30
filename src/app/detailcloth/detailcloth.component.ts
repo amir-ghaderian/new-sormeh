@@ -44,7 +44,6 @@ export class DetailclothComponent implements OnInit {
         if (element.id === this.id) {
           this.select = element;
           this.selectedImg = this.select.images[0];
-          this.totalPriceItem = this.quntity * this.select.price;
 
         }
       });
@@ -79,11 +78,13 @@ export class DetailclothComponent implements OnInit {
 
     if (this.show === false) {
       this.alert = true;
-      
-    }else{
-    let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
-    this.cart.push(customObj);
-    this.closeModal('custom-modal-1')
+
+    } else {
+      this.totalPriceItem = this.quntity * this.select.price;
+
+      let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
+      this.cart.push(customObj);
+      this.closeModal('custom-modal-1')
     }
   }
   onChange(value: string) {
