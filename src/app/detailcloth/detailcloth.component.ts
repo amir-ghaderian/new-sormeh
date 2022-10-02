@@ -44,6 +44,7 @@ export class DetailclothComponent implements OnInit {
         if (element.id === this.id) {
           this.select = element;
           this.selectedImg = this.select.images[0];
+          this.totalPriceItem = this.quntity * this.select.price;
 
         }
       });
