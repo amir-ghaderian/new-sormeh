@@ -1,8 +1,9 @@
 <div class="max-w-6xl flex items-center h-auto lg:h-screen  flex-wrap mx-auto my-32 lg:my-1 justify-center">
 
 	<!--Main Col-->
-	<div style="background-image: url({{selectedImg}});" class=" bg-cover w-full  bg-no-repeat		 bg-center   lg:w-2/5 h-4/5 rounded-lg shadow-2xl ">
-		
+	<div style="background-image: url({{selectedImg}});"
+		class=" bg-cover w-full  bg-no-repeat		 bg-center   lg:w-2/5 h-4/5 rounded-lg shadow-2xl ">
+
 	</div>
 	<div id="profile"
 		class="w-full lg:w-3/5 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-2xl bg-white opacity-75 mx-6 lg:mx-0">
@@ -12,13 +13,13 @@
 			<!-- Image for mobile view-->
 			<div class="block lg:hidden relative max-h-screen shadow-xl  -mt-32  w-80 h-80  bg-cover bg-center "
 				style="background-image: url({{selectedImg}})"></div>
-				<div class="flex pt-4 justify-center">
+			<div class="flex pt-4 justify-center">
 				<div class="p-1 w-20 h-20 bg-cover border border-gray-200 rounded-lg"
-				*ngFor="let btn of select.images let i=index" style="background-image: url({{select.images[i]}})"
-				[ngClass]="{'bgbtn':i=== currentIndex}" (click)="showImg(i)">
-			
+					*ngFor="let btn of select.images let i=index" style="background-image: url({{select.images[i]}})"
+					[ngClass]="{'bgbtn':i=== currentIndex}" (click)="showImg(i)">
+
+				</div>
 			</div>
-		</div>
 			<h1 class="text-3xl font-bold pt-8 lg:pt-0">{{select.title}}</h1>
 			<div class="mx-auto lg:mx-0 w-4/5 pt-3 border-b-2 border-blue-500 opacity-25"></div>
 			<p class="pt-4 text-base flex items-center justify-center lg:justify-start"><svg
@@ -36,51 +37,54 @@
 						d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
 					</path>
 				</svg><span class="p-1  border border-gray-200 " *ngFor="let size of select.size">{{size}}</span></p>
-				<span class=" text-3xl ">{{select.price}}</span>
+			<span class=" text-3xl "></span>
 			<p class="pt-8 text-sm">short description </p>
 			<div class="flex justify-center">
-				
+
 			</div>
 			<div class="pt-12 pb-8">
 				<button (click)="openModal('custom-modal-1')"
 					class="bg-blue-400 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full">
-					 add to shoppingcart
+					add to shoppingcart
 				</button>
 				<jw-modal id="custom-modal-1">
-					<div class="flex justify-evenly items-center flex-wrap 	 rounded-2xl	">
-						<span class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-red-300" *ngIf="quntity>1 ">{{quntity*select.price}}قیمت{{quntity}}عدد</span>
+					<div class="flex flex-col justify-between flex-wrap 	 rounded-2xl	">
+						<span class="text-right	">نام کالا:{{select.title}}</span>
 
-						<div class="flex justify-center w-1/5">
-							<svg  (click)="giveOne()" class="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
+						<div class="flex  w-full">
+							<svg (click)="giveOne()" class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
+								<path
+									d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
 							</svg>
-				
+
 							<input class="mx-2 border text-center w-8" type="text" value="{{quntity}}">
 							<svg (click)="addOne()" class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
-							  <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
+								<path
+									d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
 							</svg>
-						   
-						  </div>
-						  <div class="flex items-center">
-							<span class="mr-2.5	">Choose your</span>
-							<select #size  class="border-2 rounded-xl" name="" id="" (change)="onChange(size.value)" >
-								<option selected="true" disabled="disabled">size</option>
-								<option *ngFor="let size of select.size" [value]="size"  >{{size}}</option>
-							</select>
+							<span class="text-white px-2 ml-16 py-2 border-0 rounded relative mb-2 bg-red-300">قیمت:{{select.price}}</span>
+							<span class="text-white px-2 ml-16 py-2 border-0 rounded relative mb-2 bg-red-300"
+								*ngIf="quntity>1 ">{{quntity*select.price}}قیمت{{quntity}}عدد</span>
+
 						</div>
-						<span>نام کالا:{{select.title}}</span>
-						<span>قیمت:{{select.price}}</span>
-						<button  (click)="addShopingCart()" class="border-2 p-4 rounded-xl bg-blue-400">تایید</button>
-						<div *ngIf="alert" class="text-white px-6 py-4 border-0 rounded relative mb-4 bg-violet-500">
-							<span class="text-xl inline-block mr-5 align-middle">
-							  <i class="fas fa-bell"></i>
-							</span>
-							<span class="inline-block align-middle mr-8">
-							  <b class="capitalize">select size!</b>
-							</span>
-							<button class="absolute bg-transparent text-2xl font-semibold leading-none right-0 top-0 mt-4 mr-6 outline-none focus:outline-none" (click)="alert = false">
-							  <span>×</span>
-							</button>
-						  </div>
+						<div class="flex items-center">
+							<select #size class="border-2 rounded-xl" name="" id="" (change)="onChange(size.value)">
+								<option selected="true" disabled="disabled">size</option>
+								<option *ngFor="let size of select.size" [value]="size">{{size}}</option>
+							</select>
+							<div id="ss" *ngIf="!alert "
+								class="text-white px-2 py-2 ml-16 border-0 rounded relative mb-4 bg-violet-300">
+								<span class="text-xl inline-block mr-5 align-middle">
+									<i class="fas fa-bell"></i>
+								</span>
+								<span class="inline-block align-middle mr-8">
+									<b class="capitalize">{{show?'Size selected ':'Choose your size'}}</b>
+								</span>
+							</div>
+
+						</div>
+						
+						<div class="flex justify-center"><button (click)="addShopingCart()" class="border-2 p-4 w-1/4  rounded-xl bg-blue-400">تایید</button></div>
 
 					</div>
 				</jw-modal>
@@ -91,7 +95,7 @@
 
 
 		</div>
-	
+
 
 	</div>
 

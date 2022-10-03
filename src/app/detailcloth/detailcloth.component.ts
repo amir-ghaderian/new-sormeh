@@ -19,7 +19,7 @@ export class DetailclothComponent implements OnInit {
   currentIndex: number = 0
   selectedImg: any;
   modal: any
-  selectedSize: string = ''
+  selectedSize: any = []
   cart: any;
   cloths: any;
   quntity: number = 1
@@ -78,8 +78,8 @@ export class DetailclothComponent implements OnInit {
   addShopingCart() {
 
     if (this.show === false) {
-      this.alert = true;
-
+      this.alert = false;
+      document.getElementById("ss")?.classList.add("bg-red-500");
     } else {
       this.totalPriceItem = this.quntity * this.select.price;
 
