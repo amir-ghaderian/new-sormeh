@@ -51,7 +51,7 @@
 					<div class="flex flex-col justify-between flex-wrap 	 rounded-2xl	">
 						<span class="text-right	">نام کالا:{{select.title}}</span>
 
-						<div class="flex  w-full">
+						<div class="flex  items-center">
 							<svg (click)="giveOne()" class="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
 								<path
 									d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
@@ -62,7 +62,7 @@
 								<path
 									d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
 							</svg>
-							<span class="text-white px-2 ml-16 py-2 border-0 rounded relative mb-2 bg-red-300">قیمت:{{select.price}}</span>
+							<span *ngIf="quntity==1 false" class="text-white px-2 ml-16 py-2 border-0 rounded relative mb-2 bg-red-300">قیمت:{{select.price}}</span>
 							<span class="text-white px-2 ml-16 py-2 border-0 rounded relative mb-2 bg-red-300"
 								*ngIf="quntity>1 ">{{quntity*select.price}}قیمت{{quntity}}عدد</span>
 
@@ -74,10 +74,10 @@
 							</select>
 							<div id="ss" *ngIf="!alert "
 								class="text-white px-2 py-2 ml-16 border-0 rounded relative mb-4 bg-violet-300">
-								<span class="text-xl inline-block mr-5 align-middle">
+								<span class="text-xl inline-block  align-middle">
 									<i class="fas fa-bell"></i>
 								</span>
-								<span class="inline-block align-middle mr-8">
+								<span class="inline-block align-middle">
 									<b class="capitalize">{{show?'Size selected ':'Choose your size'}}</b>
 								</span>
 							</div>
