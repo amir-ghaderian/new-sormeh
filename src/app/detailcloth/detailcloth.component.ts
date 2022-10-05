@@ -75,6 +75,9 @@ export class DetailclothComponent implements OnInit {
     this.modal.close(id);
 
   }
+
+  // this method is better to be in the service... so you can call it from other components too
+  // also change in signiture : addToCart(item: item)
   addShopingCart() {
 
     if (this.show === false) {
@@ -83,6 +86,7 @@ export class DetailclothComponent implements OnInit {
     } else {
       this.totalPriceItem = this.quntity * this.select.price;
 
+      // USE Item for class name. with Capital starting letter
       let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
       
       
