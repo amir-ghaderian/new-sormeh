@@ -84,6 +84,10 @@ export class DetailclothComponent implements OnInit {
       this.totalPriceItem = this.quntity * this.select.price;
 
       let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
+      
+      
+      
+      // only push if no item with same id is present. Otherwise edit the existing item
       this.cart.push(customObj);
       this.closeModal('custom-modal-1')
     }
