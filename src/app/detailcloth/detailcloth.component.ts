@@ -25,12 +25,14 @@ export class DetailclothComponent implements OnInit {
   quntity: number = 1
   show: boolean = false;
   alert: boolean = false;
-  totalPriceItem: any
+  totalPriceItem: any;
+  func: any
   constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService, scs: ShoppingCartService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
     this.cart = scs.cart;
     this.cloths = svc.clothes;
+    this.func = scs.addToCart;
   }
 
   ngOnInit(): void {
@@ -88,9 +90,9 @@ export class DetailclothComponent implements OnInit {
 
       // USE Item for class name. with Capital starting letter
       let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
-      
-      
-      
+
+
+
       // only push if no item with same id is present. Otherwise edit the existing item
       this.cart.push(customObj);
       this.closeModal('custom-modal-1')
