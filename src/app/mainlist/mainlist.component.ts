@@ -25,7 +25,7 @@ export class MainlistComponent implements OnInit {
     this.product = svc.clothes;
     this.filterList = this.product
     this.tagsCloth = svt.tags;
-    for (var i = 0; i < this.product, length; i++) {
+    for (var i = 0; i < this.product. length; i++) {
       this.currentIndex.push
     }
 

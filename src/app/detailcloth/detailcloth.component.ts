@@ -26,13 +26,13 @@ export class DetailclothComponent implements OnInit {
   show: boolean = false;
   alert: boolean = false;
   totalPriceItem: any;
-  func: any;
+  store: any;
   public cardService: ShoppingCartService;
-  constructor(private route: ActivatedRoute, 
-              private svc: ConnectorService, 
-              svt: TagsService, 
-              modalService: ModalService, 
-              shoppingCardService: ShoppingCartService) {
+  constructor(private route: ActivatedRoute,
+    private svc: ConnectorService,
+    svt: TagsService,
+    modalService: ModalService,
+    shoppingCardService: ShoppingCartService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
     this.cart = shoppingCardService.cart;
@@ -97,11 +97,31 @@ export class DetailclothComponent implements OnInit {
       // USE Item for class name. with Capital starting letter
       let customObj = new Item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
 
-
+      
+      customObj=this.store;
 
       // only push if no item with same id is present. Otherwise edit the existing item
+     
+        if (this.cardService.cart.indexOf(this.store) == -1) {
+          this.cardService.addToCart(customObj);
+        }else{
+          console.log('pashm')
+        }
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
       //this.cart.push(customObj);
-      this.cardService.addToCart(customObj);
       this.closeModal('custom-modal-1')
     }
   }
