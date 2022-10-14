@@ -5,16 +5,14 @@ import { Injectable } from '@angular/core';
 })
 
 export class ShoppingCartService {
-  cart: Array<item> = []
+  public cart: Array<Item> = []
 
+  public addToCart(item: Item) {
 
-  addToCart(item: item) {
-
-    let cos = new item(item._size, item.id, item.image, item.quntitiy, item.price, item.title, item.totalPrice)
-    this.cart.push(cos)
+    this.cart.push(item)
   }
 }
-export class item {
+export class Item {
   size: string;
   id: number;
   title: string;

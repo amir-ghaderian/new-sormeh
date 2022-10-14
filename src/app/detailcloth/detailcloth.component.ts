@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ConnectorService } from '../connector.service';
-import { item, ShoppingCartService } from '../shopping-cart.service';
+import { Item, ShoppingCartService } from '../shopping-cart.service';
 import { TagsService } from '../tags.service';
 import { ModalService } from '../_modal';
 
@@ -26,13 +26,19 @@ export class DetailclothComponent implements OnInit {
   show: boolean = false;
   alert: boolean = false;
   totalPriceItem: any;
-  func: any
-  constructor(private route: ActivatedRoute, private svc: ConnectorService, svt: TagsService, modalService: ModalService, scs: ShoppingCartService) {
+  func: any;
+  public cardService: ShoppingCartService;
+  constructor(private route: ActivatedRoute, 
+              private svc: ConnectorService, 
+              svt: TagsService, 
+              modalService: ModalService, 
+              shoppingCardService: ShoppingCartService) {
     this.modal = modalService
     this.tagsClothes = svt.tags
-    this.cart = scs.cart;
+    this.cart = shoppingCardService.cart;
     this.cloths = svc.clothes;
-    this.func = scs.addToCart;
+
+    this.cardService = shoppingCardService;
   }
 
   ngOnInit(): void {
@@ -89,12 +95,13 @@ export class DetailclothComponent implements OnInit {
       this.totalPriceItem = this.quntity * this.select.price;
 
       // USE Item for class name. with Capital starting letter
-      let customObj = new item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
+      let customObj = new Item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
 
 
 
       // only push if no item with same id is present. Otherwise edit the existing item
-      this.cart.push(customObj);
+      //this.cart.push(customObj);
+      this.cardService.addToCart(customObj);
       this.closeModal('custom-modal-1')
     }
   }
