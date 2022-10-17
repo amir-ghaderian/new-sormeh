@@ -19,7 +19,7 @@ export class DetailclothComponent implements OnInit {
   currentIndex: number = 0
   selectedImg: any;
   modal: any
-  selectedSize: any = []
+  selectedSize: any 
   cart: any;
   cloths: any;
   quntity: number = 1
@@ -95,7 +95,7 @@ export class DetailclothComponent implements OnInit {
       this.totalPriceItem = this.quntity * this.select.price;
 
       // USE Item for class name. with Capital starting letter
-      let customObj = new Item(this.selectedSize, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
+      let customObj = new Item(this.select._size, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
 
       
      
@@ -123,7 +123,7 @@ export class DetailclothComponent implements OnInit {
   }
   onChange(value: string) {
     this.show = true
-    this.selectedSize = value;
+    this.select._size = value;
 
 
   }
