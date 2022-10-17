@@ -7,27 +7,27 @@ import { Injectable } from '@angular/core';
 export class ShoppingCartService {
   public cart: Array<Item> = []
   yechi: any
+  res: any
+
   public addToCart(item: Item) {
-    // for (var i = 0; i < this.cart.length; i++) {
-    //   this.yechi = this.cart[i].id;
-    //   if (this.yechi !== item.id) {
-    //     console.log('tekrar')
+    var suc = this.cart.map(item => {
+      this.cart.find(x => x.id == item.id)
+    })
+    if (!suc) {
+      console.log("exist")
 
-    //   } else {
-    //     this.cart.push(item);
-    //   }
-    // }
+    } else {
+      this.cart.push(item);
+
+    }
 
 
-
-     item = this.yechi
-     console.log(this.cart.indexOf(this.yechi))
-     if (this.cart.indexOf(this.yechi) == -1) {
-       this.cart.push(this.yechi);
-     } else {
-       console.log("tekrar");
-     }
   }
+
+
+
+
+
 }
 export class Item {
   size: string;
