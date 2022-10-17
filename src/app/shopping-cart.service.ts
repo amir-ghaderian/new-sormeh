@@ -10,6 +10,16 @@ export class ShoppingCartService {
   res: any
 
   public addToCart(item: Item) {
+
+    let exist = false;
+    for (let index = 0; index < this.cart.length; index++) {
+      const element = this.cart[index];
+      if (element.id == item.id) {
+        exist = true;
+      }
+    }
+
+
     var suc = this.cart.map(item => {
       this.cart.find(x => x.id == item.id)
     })
