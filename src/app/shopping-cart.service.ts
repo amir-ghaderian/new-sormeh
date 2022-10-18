@@ -6,33 +6,32 @@ import { Injectable } from '@angular/core';
 
 export class ShoppingCartService {
   public cart: Array<Item> = []
-  yechi: any
-  res: any
+
 
   public addToCart(item: Item) {
-debugger
+    debugger
     let exist = false;
     for (let index = 0; index < this.cart.length; index++) {
       const element = this.cart[index];
       if (element.id == item.id) {
-        exist = true;
-      } 
-      if (exist) {
-        item.quntitiy+=element.quntitiy;
-        element.size.concat(item.size)
-       this.cart.pop()
+        exist = true
+        if (item.size === element.size) {
+          element.quntitiy += item.quntitiy;
+          ////how can I get rid of this item?
+          // (item.title = '',
+          //   item.image = '',
+          //   item.price = '',
+          //   item.totalPrice = 0,
+          //   item.size = '',
+          //   item.id=0,
+          //   item.quntitiy = 0)
+
+        }
+
       }
-
-      
-        
-      
-
+      this.cart.push(item);
     }
-
-    this.cart.push(item);
-
   }
-
 
 
 
