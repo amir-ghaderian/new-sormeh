@@ -9,33 +9,32 @@ export class ShoppingCartService {
 
 
   public addToCart(item: Item) {
-    debugger
+    ///debugger
     let exist = false;
     for (let index = 0; index < this.cart.length; index++) {
       const element = this.cart[index];
-      if (element.id == item.id) {
-        exist = true
-        if (item.size === element.size) {
-          element.quntitiy += item.quntitiy;
-          ////how can I get rid of this item?
-          // (item.title = '',
-          //   item.image = '',
-          //   item.price = '',
-          //   item.totalPrice = 0,
-          //   item.size = '',
-          //   item.id=0,
-          //   item.quntitiy = 0)
 
-        }
-
+      if (element.id === item.id) {
+        exist = true;
       }
+      if (element.size === item.size) {
+        exist = true;
+        element.quntitiy += item.quntitiy;
+
+
+
+
+      } else {
+        exist = false
+      }
+    }
+    if (exist == false) {
       this.cart.push(item);
+
     }
   }
-
-
-
 }
+
 export class Item {
   size: string;
   id: number;
