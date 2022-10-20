@@ -19,7 +19,7 @@ export class DetailclothComponent implements OnInit {
   currentIndex: number = 0
   selectedImg: any;
   modal: any
-  selectedSize: any 
+  selectedSize: any
   cart: any;
   cloths: any;
   quntity: number = 1
@@ -84,8 +84,7 @@ export class DetailclothComponent implements OnInit {
 
   }
 
-  // this method is better to be in the service... so you can call it from other components too
-  // also change in signiture : addToCart(item: item)
+
   addShopingCart() {
 
     if (this.show === false) {
@@ -93,18 +92,9 @@ export class DetailclothComponent implements OnInit {
       document.getElementById("ss")?.classList.add("bg-red-500");
     } else {
       this.totalPriceItem = this.quntity * this.select.price;
-
-      // USE Item for class name. with Capital starting letter
       let customObj = new Item(this.select._size, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
+      this.cardService.addToCart(customObj);
 
-      
-     
-      // only push if no item with same id is present. Otherwise edit the existing item
-     
-        
-          this.cardService.addToCart(customObj);
-       
-       
 
 
 
