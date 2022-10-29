@@ -9,20 +9,21 @@ export class ShoppingCartService {
 
 
   public addToCart(item: Item) {
-
+    debugger
     let exist = false;
     for (let index = 0; index < this.cart.length; index++) {
-    
+
       const element = this.cart[index];
-       
+
       if (element.id === item.id) {
         exist = true;
-      
+
         if (element.size === item.size) {
           element.quntitiy += item.quntitiy;
-        } else {
-          exist = false
+
         }
+      } else {
+        exist = false
       }
     }
     if (exist == false) {
