@@ -17,13 +17,11 @@ export class ShoppingCartService {
 
       if (element.id === item.id) {
         exist = true;
-
         if (element.size === item.size) {
           element.quntitiy += item.quntitiy;
-
+        } else {
+          exist = false
         }
-      } else {
-        exist = false
       }
     }
     if (exist == false) {
