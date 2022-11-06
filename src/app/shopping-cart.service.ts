@@ -9,7 +9,7 @@ export class ShoppingCartService {
 
 
   public addToCart(item: Item) {
-    debugger
+  
     let exist = false;
     for (let index = 0; index < this.cart.length; index++) {
 
