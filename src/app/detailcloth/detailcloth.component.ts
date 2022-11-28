@@ -30,11 +30,11 @@ export class DetailclothComponent implements OnInit {
   public cardService: ShoppingCartService;
   constructor(private route: ActivatedRoute,
     private svc: ConnectorService,
-    svt: TagsService,
+    public tagService: TagsService,
     modalService: ModalService,
     shoppingCardService: ShoppingCartService) {
     this.modal = modalService
-    this.tagsClothes = svt.tags
+    this.tagsClothes = tagService.tags
     this.cart = shoppingCardService.cart;
     this.cloths = svc.clothes;
 
@@ -73,7 +73,9 @@ export class DetailclothComponent implements OnInit {
 
   }
   getTagTitle(i: number) {
-    return this.tagsClothes[i].title;
+
+    return this.tagService.getTagTitle(i);
+    // return this.tagsClothes[i].title;
   }
   openModal(id: string) {
     this.modal.open(id);
