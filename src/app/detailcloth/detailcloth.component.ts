@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ColorService } from '../color.service';
 import { ConnectorService } from '../connector.service';
 import { Item, ShoppingCartService } from '../shopping-cart.service';
 import { TagsService } from '../tags.service';
@@ -15,7 +16,7 @@ import { ModalService } from '../_modal';
 export class DetailclothComponent implements OnInit {
   id: number = 0;
   select: any;
-  tagsClothes: any;
+  
   currentIndex: number = 0
   selectedImg: any;
   modal: any
@@ -31,10 +32,11 @@ export class DetailclothComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private svc: ConnectorService,
     public tagService: TagsService,
+    public colorService:ColorService,
     modalService: ModalService,
     shoppingCardService: ShoppingCartService) {
     this.modal = modalService
-    this.tagsClothes = tagService.tags
+
     this.cart = shoppingCardService.cart;
     this.cloths = svc.clothes;
 
@@ -75,7 +77,10 @@ export class DetailclothComponent implements OnInit {
   getTagTitle(i: number) {
 
     return this.tagService.getTagTitle(i);
-    // return this.tagsClothes[i].title;
+
+  }
+  getColorTitle(i:number){
+    return this.colorService.getColorTitle(i)
   }
   openModal(id: string) {
     this.modal.open(id);
