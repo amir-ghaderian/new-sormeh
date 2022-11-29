@@ -16,7 +16,7 @@ import { ModalService } from '../_modal';
 export class DetailclothComponent implements OnInit {
   id: number = 0;
   select: any;
-  
+
   currentIndex: number = 0
   selectedImg: any;
   modal: any
@@ -32,7 +32,7 @@ export class DetailclothComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private svc: ConnectorService,
     public tagService: TagsService,
-    public colorService:ColorService,
+    public colorService: ColorService,
     modalService: ModalService,
     shoppingCardService: ShoppingCartService) {
     this.modal = modalService
@@ -79,8 +79,12 @@ export class DetailclothComponent implements OnInit {
     return this.tagService.getTagTitle(i);
 
   }
-  getColorTitle(i:number){
-    return this.colorService.getColorTitle(i)
+  getColorTitle(i: number) {
+    return this.colorService.getColorTitle(i);
+  }
+
+  getColorRgp(i: number) {
+    return this.colorService.getColorRgp(i);
   }
   openModal(id: string) {
     this.modal.open(id);

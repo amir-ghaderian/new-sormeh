@@ -16,6 +16,9 @@ export class ColorService {
     { id: 9, title: "آبی آسمانی", rgp: "#87d1ed" },
     { id: 10, title: "نارنجی", rgp: "#da861a" },
     { id: 11, title: "کرم نخودی", rgp: "#f4d586" },
+    { id: 12, title: " سبز یشمی", rgp: "#123c04" },
+    { id: 13, title: "  قهوه ای", rgp: "#7a3c0f" },
+    { id: 14, title: "  سرمه ای", rgp: "#0f0f85" },
 
   ]
 
@@ -25,6 +28,13 @@ export class ColorService {
       return target.title;
     }
     return '-'
+  }
+  public getColorRgp(colorId: number): string {
+    const targetRgp = this.colors.find(r => r.id === colorId);
+    if (targetRgp) {
+      return targetRgp.rgp;
+    }
+    return "-"
   }
 }
 export class color {
