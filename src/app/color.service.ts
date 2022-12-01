@@ -19,6 +19,7 @@ export class ColorService {
     { id: 12, title: " سبز یشمی", rgp: "#123c04" },
     { id: 13, title: "  قهوه ای", rgp: "#7a3c0f" },
     { id: 14, title: "  سرمه ای", rgp: "#0f0f85" },
+    { id: 15, title: "   زرد", rgp: "#f4f40a" },
 
   ]
 

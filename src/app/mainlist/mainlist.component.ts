@@ -88,19 +88,19 @@ export class MainlistComponent implements OnInit {
     this.currentImge = []
     this.currentIndex = []
     for (var i = 0; i < this.filterList.length; i++) {
-      this.currentImge.push(this.filterList[i].images[0])
+      this.currentImge.push(this.filterList[i].images[0].url)
       this.currentIndex.push(0)
     }
   }
   previous(id: number, clothesNum: number) {
     this.currentIndex[clothesNum] -= 1;
 
-    this.currentImge[clothesNum] = this.product[clothesNum].images[this.currentIndex[clothesNum]];
+    this.currentImge[clothesNum] = this.product[clothesNum].images[this.currentIndex[clothesNum]].url;
 
   }
   next(id: number, clothesNum: number) {
     this.currentIndex[clothesNum] += 1
-    this.currentImge[clothesNum] = this.product[clothesNum].images[this.currentIndex[clothesNum]];
+    this.currentImge[clothesNum] = this.product[clothesNum].images[this.currentIndex[clothesNum]].url;
 
 
 

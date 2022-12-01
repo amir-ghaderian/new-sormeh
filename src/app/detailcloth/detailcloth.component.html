@@ -15,7 +15,7 @@
 				style="background-image: url({{selectedImg}})"></div>
 			<div class="flex pt-4 justify-center">
 				<div class="p-1 w-20 h-20 bg-cover border border-gray-200 rounded-lg"
-					*ngFor="let btn of select.images let i=index" style="background-image: url({{select.images[i]}})"
+					*ngFor="let btn of select.images let i=index" style="background-image: url({{select.images[i].url}})"
 					[ngClass]="{'bgbtn':i=== currentIndex}" (click)="showImg(i)">
 
 				</div>

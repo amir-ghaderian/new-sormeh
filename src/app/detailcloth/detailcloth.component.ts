@@ -53,7 +53,7 @@ export class DetailclothComponent implements OnInit {
       this.svc.clothes.forEach((element: any) => {
         if (element.id === this.id) {
           this.select = element;
-          this.selectedImg = this.select.images[0];
+          this.selectedImg = this.select.images[0].url;
           this.totalPriceItem = this.quntity * this.select.price;
 
         }
@@ -69,7 +69,7 @@ export class DetailclothComponent implements OnInit {
 
   }
   showImg(i: number) {
-    this.selectedImg = this.select.images[i]
+    this.selectedImg = this.select.images[i].url
     this.currentIndex = i
 
 
