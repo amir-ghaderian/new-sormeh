@@ -10,7 +10,7 @@ export class ConnectorService {
   currentImge: string[] = [];
   currentIndex: number[] = [];
   public clothes: any = [
-    { id: 45, title: "بارانی تو خز", images: [{ url: "assets/pic/14.JPG", colorId: 15 }, { url: "assets/pic/15.JPG", colorId: 5 }, { url: "assets/pic/16.JPG", colorId: 10 }, { url: "assets/pic/17.JPG", colorId: 12 }], tagId: [2, 4, 5], size: ['1', '2'], price: 499000, colorIds: [1, 2, 3, 4, 5, 6, 7, 8] },
+    { id: 45, title: "بارانی تو خز", images: [{ url: "assets/pic/14.JPG", colorId: 15 }, { url: "assets/pic/15.JPG", colorId: 5 }, { url: "assets/pic/16.JPG", colorId: 4 }, { url: "assets/pic/17.JPG", colorId: 2 }], tagId: [2, 4, 5], size: ['1', '2'], price: 499000, colorIds: [ 2, 4, 5 ,15] },
     { id: 46, title: "کت فوتر", images: [{ url: "assets/pic/18.JPG", colorId: 1 }, { url: "assets/pic/19.JPG", colorId: 2 }, { url: "assets/pic/20.JPG", colorId: 3 }, { url: "assets/pic/21.JPG", colorId: 4 }, { url: "assets/pic/22.JPG", colorId: 5 }], tagId: [1, 4, 0], size: ['1', '2', '3', '4'], price: 468000, colorIds: [9, 10, 11, 1, 8] },
     { id: 47, title: "اورکت ضد آب", images: [{ url: "assets/pic/26.JPG", colorId: 1 }, { url: "assets/pic/27.JPG", colorId: 2 }, { url: "assets/pic/25.JPG", colorId: 3 }, { url: "assets/pic/24.JPG", colorId: 4 }], tagId: [3, 5, 1], size: ['M', "L", "XL", "XXL"], price: 498000, colorIds: [14, 1, 12, 11, 4, 13] },
     { id: 48, title: "مانتو مدل هلیا", images: [{ url: "assets/pic/2.jpg", colorId: 1 }, { url: "assets/pic/8.jpg", colorId: 2 }], tagId: [1, 4, 6], size: ['38', '40', '42'], price: 298000, colorIds: [] },
