@@ -99,10 +99,11 @@ export class DetailclothComponent implements OnInit {
 
   showClothColor(c: number) {
     for (var i = 0; i < this.select.images.length; i++) {
-     if(this.select.images[i].colorId===c){
-       this.selectedImg=this.select.images[i].url;
+      if (this.select.images[i].colorId === c) {
+        this.selectedImg = this.select.images[i].url;
+        this.currentIndex = i;
       }
-     
+
     }
 
   }
