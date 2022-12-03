@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+console.log(this.cart)
     /// this.totalPricesItems = this.cart.map((a: { totalPrice: number; }) => a.totalPrice);
 
 

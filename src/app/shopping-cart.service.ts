@@ -37,9 +37,10 @@ export class Item {
   title: string;
   image: string;
   price: string;
+  color:string;
   quntitiy: number = 0;
   totalPrice: number = 0;
-  constructor(public _size: string, _id: number, _title: string, _image: string, _price: string, _quntity: number, _totalPrice: number) {
+  constructor(public _size: string, _id: number, _title: string, _image: string, _price: string, _quntity: number, _totalPrice: number,_color:string) {
     this.size = _size;
     this.id = _id;
     this.title = _title;
@@ -47,5 +48,6 @@ export class Item {
     this.price = _price;
     this.quntitiy = _quntity;
     this.totalPrice = _totalPrice;
+    this.color=_color;
   }
 }

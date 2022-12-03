@@ -89,9 +89,16 @@
 									<b class="capitalize">{{'choose size'}}</b>
 								</span>
 							</div>
-
+                           
 						</div>
-
+						<div class="flex items-center">
+							<select #color class="border-2 rounded-xl" name="" id="" (change)="onChangeColor(color.value)">
+								<option selected="true" disabled="disabled">color</option>
+								<option *ngFor="let col of select.colorIds" [value]="">{{getColorTitle(col)}}</option>
+							</select>
+							<span>رنگ مورد نظر را انتخاب کنیید</span>
+							
+						</div>
 						<div class="flex justify-center"><button (click)="addShopingCart()"
 								class="border-2 p-4 w-1/4  rounded-xl bg-blue-400">تایید</button></div>
 

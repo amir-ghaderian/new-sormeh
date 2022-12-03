@@ -16,7 +16,6 @@ import { ModalService } from '../_modal';
 export class DetailclothComponent implements OnInit {
   id: number = 0;
   select: any;
-
   currentIndex: number = 0
   selectedImg: any;
   modal: any
@@ -36,10 +35,8 @@ export class DetailclothComponent implements OnInit {
     modalService: ModalService,
     shoppingCardService: ShoppingCartService) {
     this.modal = modalService
-
     this.cart = shoppingCardService.cart;
     this.cloths = svc.clothes;
-
     this.cardService = shoppingCardService;
   }
 
@@ -116,7 +113,7 @@ export class DetailclothComponent implements OnInit {
       document.getElementById("ss")?.classList.add("bg-red-500");
     } else {
       this.totalPriceItem = this.quntity * this.select.price;
-      let customObj = new Item(this.select._size, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem)
+      let customObj = new Item(this.select._size, this.select.id, this.select.title, this.selectedImg, this.select.price, this.quntity, this.totalPriceItem,this.select.color)
       this.cardService.addToCart(customObj);
 
 
@@ -138,6 +135,11 @@ export class DetailclothComponent implements OnInit {
   onChange(value: string) {
     this.show = true
     this.select._size = value;
+
+
+  }
+  onChangeColor(value:string){
+    this.select.color = value;
 
 
   }
