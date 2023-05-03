@@ -36,7 +36,7 @@ export class MainlistComponent implements OnInit {
     this.renderList()
   }
   showingImg(id: number, clothesNum: number) {
-    this.currentImge[clothesNum] = this.filterList[clothesNum].images[id];
+    this.currentImge[clothesNum] = this.filterList[clothesNum].images[id].url;
     this.currentIndex[clothesNum] = id;
 
   }
