@@ -16,15 +16,17 @@ export class MainlistComponent implements OnInit {
   currentIndex: number[] = [];
   targetCloth: any = ''
   product: any
+  modal:any
   tagsCloth: Array<Tag>;
   selectedTags: Array<number> = [];
   filtered: number[] = []
   show = false;
   filterList: any;
-  constructor(private modalService: ModalService, svc: ConnectorService, svt: TagsService) {
+  constructor(public modalService: ModalService, svc: ConnectorService, svt: TagsService) {
     this.product = svc.clothes;
     this.filterList = this.product
     this.tagsCloth = svt.tags;
+    this.modal = modalService;
     for (var i = 0; i < this.product. length; i++) {
       this.currentIndex.push
     }
@@ -104,5 +106,13 @@ export class MainlistComponent implements OnInit {
 
 
 
+  }
+  openModal(id: string) {
+    this.modal.open(id);
+  
+  }
+  closeModal(id: string) {
+    this.modal.close(id);
+  
   }
 }
