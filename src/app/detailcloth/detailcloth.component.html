@@ -13,7 +13,7 @@
 			<!-- Image for mobile view-->
 			<div class="block lg:hidden relative max-h-screen shadow-xl  -mt-32  w-80 h-80  bg-cover  "
 				style="background-image: url({{selectedImg}})"></div>
-			<div class="flex pt-4 justify-center">
+			<div class="flex pt-4 ">
 				<div class="p-1 w-20 h-20 bg-cover border border-gray-200 rounded-lg"
 					*ngFor="let btn of select.images let i=index" style="background-image: url({{select.images[i].url}})"
 					[ngClass]="{'bgbtn':i=== currentIndex}" (click)="showImg(i)">
@@ -38,10 +38,10 @@
 					</path>
 				</svg><span class="p-1  border border-gray-200 " *ngFor="let size of select.size">{{size}}</span></p>
 			<span class=" text-3xl "></span>
-			<div class="flex justify-between flex-wrap"> 
+			<div class="flex flex-wrap"> 
 				<span class="p-1 border border-gray-200  rounded-2xl" *ngFor="let col of select.colorIds">{{getColorTitle(col)}}</span>
 			</div>
-			<div class="flex justify-between flex-wrap"> 
+			<div class="flex  flex-wrap"> 
 				<span  class=" ml-4 p-4 border-2 border-gray-200  rounded-2xl" *ngFor="let rgp of select.colorIds" [ngStyle]="{'background-color':getColorRgp(rgp) }" (click)="showClothColor(rgp)"></span>
 			</div>
 			<p class="pt-8 text-sm">short description </p>
