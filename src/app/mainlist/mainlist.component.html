@@ -148,9 +148,11 @@ Alternatively if you want to just have a single hero
                 </div>
             </nav>
 
-            <div class="w-full md:w-1/3 xl:w-1/4 p-6  flex flex-col" *ngFor="let pic of filterList let i=index">
+            <div class="w-full md:w-1/3 xl:w-1/4 p-6  flex flex-col " *ngFor="let pic of filterList let i=index">
                 <a [routerLink]="['/detail',pic.id]">
-                    <img class="hover:grow hover:shadow-lg" src={{currentImge[i]}}>
+                    <div class="hover:grow hover:shadow-lg w-80 h-96  bg-cover mx-2 "
+                        style="background-image: url({{currentImge[i]}});"></div>
+                    <!-- <img src={{currentImge[i]}}> -->
                 </a>
                 <div class="flex justify-center">
                     <div *ngFor="let image of pic.images let l=index " class="inline-flex">
@@ -179,7 +181,7 @@ Alternatively if you want to just have a single hero
 
     </section>
 
-    
+
 
     <footer class="container mx-auto bg-white py-8 border-t border-gray-400">
         <div class="container flex  px-3 py-8 ">
@@ -213,7 +215,8 @@ Alternatively if you want to just have a single hero
                                 </a>
                             </li>
                             <li>
-                                <a class="inline-block no-underline hover:text-black hover:underline py-1" href="tel:09125608503">
+                                <a class="inline-block no-underline hover:text-black hover:underline py-1"
+                                    href="tel:09125608503">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor"
                                         style="color: #128c7e" viewBox="0 0 24 24">
                                         <path
@@ -323,7 +326,7 @@ Alternatively if you want to just have a single hero
                             
                       <div class="flex justify-between "> <span (click)="showingImg(l,i)" class="  p-1 cursor-pointer border-2 border-black-600 rounded-xl" [ngClass]="{'bg-gray-300 ':l ===  currentIndex[i]}" >{{l+1}}</span></div> 
 
-                        <!-- </div>
+                       </div>
                     <span id="child" class="bg-gray-100  text-center">{{pic.price}}</span>
 
 
